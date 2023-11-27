@@ -1,3 +1,13 @@
+<%= simple_form_for(thing) do |f| %>
+  <%= f.input :name, label: "Pet name", class: "test" %>
+  <%= f.input :species, collection:['cat', 'dog'] %>
+  <%= f.input :breed %>
+  <%= f.input :location, input_html: { data: {address_autocomplete_target: "address"}, class: "d-none" },
+      wrapper_html: { data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } },
+      autocomplete: "on"%>
+  <%= f.submit class: 'button btn btn-primary'%>
+<% end %>
+
 <%# frozen_string_literal: true %>
 <%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
   <%%= f.error_notification %>
