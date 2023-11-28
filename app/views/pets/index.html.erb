@@ -3,8 +3,9 @@
   <%= link_to "Found", pets_path(missing: false) %>
 </div>
 
-<div class="cards">
+      <div class="cards">
   <% @pets.each do |pet|%>
+    <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="pets-info">
       <%= pet.name%>
       <p>Posted at <%= pet.created_at.strftime('%a %e %b')%> | <%= pet.city %> </p>
