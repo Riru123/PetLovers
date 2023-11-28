@@ -1,3 +1,15 @@
-<div >
-    <h1>hi</h1>
+<div class="pets-filter">
+  <%= link_to "Missing", pets_path(missing: true) %>
+  <%= link_to "Found", pets_path(missing: false) %>
+</div>
+
+<div class="cards">
+  <% @pets.each do |pet|%>
+    <div class="pets-info">
+      <%= pet.name%>
+      <p>Posted at <%= pet.created_at.strftime('%a %e %b')%> | <%= pet.city %> </p>
+    </div>
+    <h3><%= pet.details%></h3>
+    <p class="pet-user-info"><i class="fa-solid fa-phone-volume"></i><%= pet.user.phone %><i class="fa-regular fa-message"></i></p>
+  <% end %>
 </div>
