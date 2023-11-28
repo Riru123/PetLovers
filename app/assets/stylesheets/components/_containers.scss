@@ -1,0 +1,34 @@
+
+// General container on application.htlm.erb
+
+.general-container {
+  display: flex;
+  flex-direction: column; /* For a vertical layout */
+  margin: 0px;
+  /* Additional styles */
+}
+
+// Container for home page
+
+.home-container {
+  background-image: url('/assets/images/background-image-pink.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+// Container for header partial
+
+.header-container {
+  margin: 16px;
+  background-color: rgba(255, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+.item {
+  flex: 1; /* Distribute available space equally among child elements */
+  /* Additional styles */
+}
