@@ -65,7 +65,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_28_103217) do
     t.string "colors"
     t.text "details"
     t.boolean "missing"
-    t.boolean "found"
     t.string "street"
     t.string "city"
     t.string "country"
