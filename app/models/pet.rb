@@ -6,6 +6,4 @@ class Pet < ApplicationRecord
 
   scope :missing_pet, -> { where(missing: true) }
   scope :found_pet, -> { where(missing: false) }
-
-  include PgSearch::Model
 end

@@ -2,9 +2,9 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:missing].present? && params[:missing] == true
+    if params[:missing] == "true"
       @pets = Pet.missing_pet
-    elsif params[:missing].present? && params[:missing] == false
+    elsif params[:missing] == "false"
       @pets = Pet.found_pet
     else
       @pets = Pet.all
