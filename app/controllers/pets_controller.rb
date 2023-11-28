@@ -14,4 +14,9 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
   end
+
+  def pet_params
+    params.require(:pet).permit(:photo)
+  end
+
 end
