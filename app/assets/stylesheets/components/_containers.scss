@@ -15,6 +15,7 @@
   border-radius: 50px 50px 0px 0px;
   z-index: 0;
   margin: 0px;
+  padding: 0px 15px;
 }
 
 
@@ -36,4 +37,9 @@
     order: 1; /* Place the first item on the right by changing its order */
 }
   text-decoration: none;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
