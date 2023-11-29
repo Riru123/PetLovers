@@ -2,9 +2,9 @@ class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:missing] == "true"
-      @pets = Pet.missing_pet
-    elsif params[:missing] == "false"
+    if params[:category] == "I lost"
+      @pets = Pet.lost_pet
+    elsif params[:category] == "I found"
       @pets = Pet.found_pet
     else
       @pets = Pet.all
@@ -16,6 +16,7 @@ class PetsController < ApplicationController
   end
 
   def new
+    @disable_nav = true
     @pet = Pet.new
   end
 
@@ -46,13 +47,8 @@ class PetsController < ApplicationController
   end
 
   private
-
-  def pet_params
-    params.require(:pet).permit(:name, :species, :breed, :colors, :details, :street, :city, :country, :zip_code)
-  end
-
-  def pet_params
-    params.require(:pet).permit(:photo)
-  end
   
+  def pet_params
+    params.require(:pet).permit(:name, :photo, :species, :breed, :colors, :details, :street, :city, :country, :zip_code)
+  end
 end

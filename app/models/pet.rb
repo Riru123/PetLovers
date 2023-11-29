@@ -5,6 +5,6 @@ class Pet < ApplicationRecord
   validates :name, :species, :colors, :street, :city, :country, :zip_code, presence: true
   # validates =false
 
-  scope :missing_pet, -> { where(missing: true) }
-  scope :found_pet, -> { where(missing: false) }
+  scope :lost_pet, -> { where(category: "I lost") }
+  scope :found_pet, -> { where(category: "I found") }
 end
