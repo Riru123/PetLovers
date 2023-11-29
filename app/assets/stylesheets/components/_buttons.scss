@@ -73,3 +73,67 @@
   flex-direction: column;
   align-items: center;
 }
+
+
+label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  // padding: 0px 7px;
+  // margin: 2px 0px;
+  border-radius: 40px;
+  width: 240px;
+  height: 45px;
+  align-items: center;
+  justify-content: center;
+  background: #E5E4E3;
+  transition: 0.3s;
+}
+
+label:after {
+  content: "Missing";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  color: white;
+  padding: 0.5rem 2.5em;
+  font-weight:500;
+  font-size: 14px;
+  background-color: #031A1C;
+  border-radius: 40px;
+  width: 114px;
+  height: 37px;
+  transition: 0.3s;
+}
+
+input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+input:checked + label:before {
+  content: "Missing";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  transition: 0.3s;
+}
+
+label:before{
+  content: 'Found';
+  position: absolute;
+  top: 4px;
+  left: 115px;
+  padding: 0.5rem 2.5em;
+  font-weight:500;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:checked + label::after {
+  content: "Found";
+  left: 230px;
+  transform: translateX(-100%);
+  background: $pink;
+}
