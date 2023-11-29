@@ -1,3 +1,29 @@
-.button-create {
+.navbar-pet {
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+  border-style: solid;
+  border-width: thin;
+  border-top-color: $lightgray;
+
+  .content-navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.create {
+  background-color: $pink;
+  color: #ffffff;
+  border: none;
   border-radius: 50%;
+  padding: 8px;
+  width: 44px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $darkgray;
 }
