@@ -1,9 +1,30 @@
-<div class="navbar">
-  <%= link_to root_path do %>
+<div class="navbar-pet fixed-bottom">
+
+  <div class="content-navbar pt-4">
     <i class="fa-solid fa-house"></i>
-  <% end %>
+    <p><%= link_to "Home", root_path%></p>
+  </div>
 
-  <i class="fa-regular fa-map"></i>
+  <div class="content-navbar pt-4">
+    <i class="fa-solid fa-location-dot"></i>
+    <p><%= link_to "Location", root_path%></p>
+  </div>
 
-  <button class="button-create"><i class="fa-solid fa-plus"></i></button>
+  <div class="content-navbar">
+    <div>
+      <button class="create"><i class="fa-solid fa-plus fa-2x"></i></button>
+    </div>
+      <p><%= link_to "Create", root_path%></p>
+  </div>
+
+  <div class="content-navbar pt-4">
+    <i class="fa-solid fa-grip"></i>
+    <p><%= link_to "Browse", root_path%></p>
+  </div>
+
+  <div class="content-navbar pt-4">
+    <i class="fa-regular fa-user"></i>
+    <p><%= link_to "Profile", root_path%></p>
+  </div>
+
 </div>
