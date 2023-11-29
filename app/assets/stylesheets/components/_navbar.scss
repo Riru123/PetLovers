@@ -5,11 +5,21 @@
   border-style: solid;
   border-width: thin;
   border-top-color: $lightgray;
+  background-color: #ffffff;
 
   .content-navbar {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: $darkgray;
+  }
+
+  i {
+    color: $darkgray;
   }
 }
 
@@ -19,11 +29,6 @@
   border: none;
   border-radius: 50%;
   padding: 8px;
-  width: 44px;
+  width: 50px;
   text-align: center;
-}
-
-a {
-  text-decoration: none;
-  color: $darkgray;
 }
