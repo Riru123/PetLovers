@@ -1,20 +1,28 @@
+<div class="container-white-background">
+  <div class="form-container">
 <%= simple_form_for(thing, html: { data: { controller: "photo-preview" } }) do |f| %>
+  <%= image_tag "", width: 300, class: "hidden", data: { photo_preview_target: "preview" } %>
+  <%= f.input :photo, as: :file, input_html: { class: 'd-none', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" } }, label_html: { class: 'upload-photo' }, label: 'Upload Photo'%>
   <%= f.input :name, label: "Pet name" %>
   <%#= f.input :photo, as: :file, :label => "Photo" %>
-  <%= f.input :photo, as: :file, input_html: { class: 'd-none', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" } }, label_html: { class: 'upload-photo' }, label: '📷 Upload a photo' %>
-  <%= image_tag "", width: 300, class: "hidden", data: { photo_preview_target: "preview" } %>
   <%= f.input :species, collection: ['Cat', 'Dog'] %>
   <%= f.input :breed %>
   <%= f.input :colors %>
   <%= f.input :details %>
+  <%= f.input :category, input_html: { value: 'lost', class:'d-none'}, label: false%>
 
-  <h2>Where did you lose your pet?</h2>
-  <button type="button" id="currentLocationButton">Current Location</button>
+  <h2>Where did you lose?
+    <button>
+      <p>Current location<i class="fa-solid fa-location-dot"></i></p>
+    </button>
+  </h2>
   
   <%= f.input :street %>
   <%= f.input :zip_code %>
   <%= f.input :city %>
   <%= f.input :country, as: :string %>
-
-  <%= f.submit class: 'button btn btn-primary' %>
+  <%= f.submit class: 'btn btn-primary' %>
+  <%= link_to "Cancel", pets_path %>
 <% end %>
+  </div>
+</div>
