@@ -4,7 +4,7 @@
   padding: 5px;
   border-style: solid;
   border-width: thin;
-  border-top-color: $darkgray;
+  border-top-color: $lightgray;
 
   .content-navbar {
     display: flex;
@@ -15,8 +15,15 @@
 
 .create {
   background-color: $pink;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
-  height: 65px;
-  width: 65px;
+  padding: 8px;
+  width: 44px;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: $darkgray;
 }
