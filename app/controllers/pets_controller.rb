@@ -31,6 +31,7 @@ class PetsController < ApplicationController
   end
 
   def edit
+    @disable_nav = true
     @pet = Pet.find(params[:id])
   end
 
@@ -47,7 +48,7 @@ class PetsController < ApplicationController
   end
 
   private
-  
+
   def pet_params
     params.require(:pet).permit(:name, :photo, :species, :breed, :colors, :details, :street, :city, :country, :zip_code)
   end
