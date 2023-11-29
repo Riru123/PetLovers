@@ -16,6 +16,7 @@ class PetsController < ApplicationController
   end
 
   def new
+    @disable_nav = true
     @pet = Pet.new
   end
 
@@ -32,10 +33,6 @@ class PetsController < ApplicationController
   private
   
   def pet_params
-    params.require(:pet).permit(:name, :species, :breed, :colors, :details, :street, :city, :country, :zip_code)
-  end
-
-  def pet_params
-    params.require(:pet).permit(:photo)
+    params.require(:pet).permit(:name, :photo, :species, :breed, :colors, :details, :street, :city, :country, :zip_code)
   end
 end
