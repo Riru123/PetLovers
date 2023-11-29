@@ -1,4 +1,14 @@
 <div class="home-container">
- <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+
+<h2 class='home-title'>Missing Pets</h2>
+  <div class="main-cards-home-missing">
+    <%= render "pets/cards-home-missing" %>
+  </div>
+
+<h2 class='home-title'>Found Pets</h2>
+  <div class="main-cards-home-found">
+    <%= render "pets/cards-home-found" %>
+  </div>
 </div>
