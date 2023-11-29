@@ -1,0 +1,9 @@
+<h1>Update the pet's details</h1>
+<% if @pet.category == "I lost" %>
+  <%= render "form-lost", thing: @pet %>
+<% elsif @pet.category == "I found" %>
+  <%= render "form-found", thing: @pet %>
+<% else %>
+  <%= render :edit, status: :unprocessable_entity %>
+<% end %>
+<%= link_to "Cancel", pet_path(@pet)%>
