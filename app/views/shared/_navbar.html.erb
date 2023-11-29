@@ -14,14 +14,42 @@
     </a>
   </div>
 
-  <div class="content-navbar">
-    <a href="<%= root_path %>">
-      <div class="create">
-      <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="create" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
+  </button>
+
+
+
+
+  <!-- Modal popup -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-footer">
+          <div><button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= link_to "Report Found", new_pet_path(category: 'found'), class: "" %></button></div>
+          <div><%= link_to "Report lost", new_pet_path(category: 'lost'), class: "btn btn-primary" %></div>
+        </div>
       </div>
-      <p><%= link_to "Create", root_path%></p>
-    </a>
+    </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+  
 
   <div class="content-navbar pt-4">
     <a href="<%= root_path %>">

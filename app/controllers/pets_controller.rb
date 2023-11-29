@@ -9,6 +9,9 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all
     end
+
+    @pets_lost = Pet.where(category: "I lost")
+    @pets_found = Pet.where(category: "I found")
   end
 
   def show
@@ -50,6 +53,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :photo, :species, :breed, :colors, :details, :street, :city, :country, :zip_code)
+    params.require(:pet).permit(:name, :photo, :species, :breed, :colors, :details, :street, :city, :country, :zip_code, :category)
   end
 end

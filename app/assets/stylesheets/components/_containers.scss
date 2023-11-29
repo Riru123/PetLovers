@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column; /* For a vertical layout */
   margin: 0px;
-  background:linear-gradient(0deg, rgba(255, 255, 255, 0.23), rgba(0, 0, 0, 0.194)), url('Background-image-pink.png');
+  background:linear-gradient(0deg, rgba(255, 255, 255, 0.23), rgba(0, 0, 0, 0.194)), url('background-image.png');
   background-size: cover;
   /* Additional styles */
 }
@@ -15,6 +15,7 @@
   border-radius: 50px 50px 0px 0px;
   z-index: 0;
   margin: 0px;
+  padding: 0px 15px;
 }
 
 
@@ -36,4 +37,13 @@
     order: 1; /* Place the first item on the right by changing its order */
 }
   text-decoration: none;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.form-container {
+  margin: 10% 5%;
 }
