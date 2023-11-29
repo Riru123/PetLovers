@@ -1,0 +1,50 @@
+.pet-image {
+  width: 100%; /* width of container */
+  height: 200px; /* height of container */
+  object-fit: cover;
+  object-position: 20px 10px;
+}
+
+.pet-details {
+  margin: 20px 10px 10px 10px;
+}
+
+.pet-themes {
+  color: $black;
+}
+
+.additional-features {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  svg:nth-child(n+2) {
+    margin-right: 5px;
+  }
+}
+
+.left-icon {
+  margin-right: auto;
+  display: flex;
+
+  svg {
+    color: $darkgray;
+  }
+}
+
+.about-pet {
+  display: flex;
+}
+
+.color-breed-pet {
+  background-color: $gray;
+  margin: 3px;
+  padding-top: 4px;
+  padding-left: 10px;
+  padding-right: 110px;
+  border-radius: 10px;
+
+  h3 {
+    color: $black;
+  }
+}
