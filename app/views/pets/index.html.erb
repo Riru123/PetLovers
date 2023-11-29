@@ -1,16 +1,20 @@
-<div class="pets-filter">
-  <%= link_to "Missing", pets_path(category: "I lost") %>
-  <%= link_to "Found", pets_path(category: "I found") %>
-</div>
+<div class="general-container">
+  <div class="container-white-background button-toggle-container">
 
-      <div class="cards">
-  <% @pets.each do |pet|%>
-    <%= cl_image_tag pet.photo.key, height: 300, width: 400, crop: :fill %>
-    <div class="pets-info">
-      <%= pet.name%>
-      <p>Posted at <%= pet.created_at.strftime('%a %e %b')%> | <%= pet.city %> </p>
+    <div class="button-toggle">
+      <%= link_to "Missing", pets_path(category: "I lost"), class: "missing-toggle" %>
+      <%= link_to "Found", pets_path(category: "I found"), class: "found-toggle" %>
     </div>
-    <h3><%= pet.details%></h3>
-    <p class="pet-user-info"><i class="fa-solid fa-phone-volume"></i><%= pet.user.phone %><i class="fa-regular fa-message"></i></p>
-  <% end %>
+
+    <div class="index-title">
+      <h3>All lost pet around you</h3>
+      <i class="fa-solid fa-filter"></i>
+    </div>
+
+    <div class="main-cards-index">
+      <%= render "pets/cards-index" %>
+    </div>
+
+
+  </div>
 </div>
