@@ -1,6 +1,4 @@
-<div class="general-container">
-  <div class="container-white-background button-toggle-container">
-
+<div class="container-white-background button-toggle-container">
     <div class="button-toggle">
       <%= link_to "Missing", pets_path(category: "I lost"), class: "missing-toggle" %>
       <%= link_to "Found", pets_path(category: "I found"), class: "found-toggle" %>
@@ -14,7 +12,5 @@
     <div class="main-cards-index">
       <%= render "pets/cards-index" %>
     </div>
-
-
-  </div>
 </div>
+
