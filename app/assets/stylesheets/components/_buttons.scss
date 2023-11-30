@@ -133,7 +133,7 @@
 
 .input-index:checked + .label-index::after {
   content: "Found";
-  left: 230px;
+  left: 234px;
   transform: translateX(-100%);
   background: $pink;
 }

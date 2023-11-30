@@ -12,6 +12,11 @@ class PetsController < ApplicationController
 
     @pets_lost = Pet.where(category: "I lost")
     @pets_found = Pet.where(category: "I found")
+
+    respond_to do |format|
+      format.html
+      format.text { render partial: "pets/cards-index", locals: { category: "I lost" }, formats: [:html] }
+    end
   end
 
   def show
