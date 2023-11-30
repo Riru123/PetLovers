@@ -51,6 +51,12 @@ class PetsController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
+  def mark_as_found
+    @pet = Ped.find(params[:id])
+    @pet.update(missing: false)
+    redirect_to pet_path(@pet)
+  end
+
   private
 
   def pet_params
