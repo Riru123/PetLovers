@@ -1,5 +1,6 @@
 .button-pink {
   background-color: $pink;
+  text-decoration: none;
   border-radius: 10px;
   color: $white;
   padding-top: 10px;
@@ -8,11 +9,12 @@
   margin-right: 30px;
   text-align: center;
   margin-top: 3px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
 }
 
 .button-black {
   background-color: $black;
+  text-decoration: none;
   border-radius: 10px;
   color: $white;
   padding-top: 10px;
