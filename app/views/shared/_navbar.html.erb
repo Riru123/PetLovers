@@ -1,24 +1,24 @@
-<div class="navbar-pet fixed-bottom">
+<div data-controller="navbar-popup">
+  <div class="navbar-pet fixed-bottom" data-navbar-popup-target="navbar">
 
-  <div class="content-navbar pt-4">
-    <a href="<%= root_path %>">
-      <i class="fa-solid fa-house"></i>
-      <p><%= link_to "Home", root_path%></p>
-    </a>
-  </div>
+    <div class="content-navbar pt-4">
+      <a href="<%= root_path %>">
+        <i class="fa-solid fa-house"></i>
+        <p><%= link_to "Home", root_path%></p>
+      </a>
+    </div>
 
-  <div class="content-navbar pt-4">
-    <a href="<%= root_path %>">
-      <i class="fa-solid fa-location-dot"></i>
-      <p><%= link_to "Location", root_path%></p>
-    </a>
-  </div>
-  
+    <div class="content-navbar pt-4">
+      <a href="<%= root_path %>">
+        <i class="fa-solid fa-location-dot"></i>
+        <p><%= link_to "Location", root_path%></p>
+      </a>
+    </div>
+      
   <!-- Button trigger modal -->
   <button type="button" class="create" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
   </button>
-
   <!-- Modal popup -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -33,19 +33,31 @@
       </div>
     </div>
   </div>
-  
-  <div class="content-navbar pt-4">
-    <a href="<%= pets_path %>">
-      <i class="fa-solid fa-grip"></i>
-      <p><%= link_to "Browse", pets_path%></p>
-    </a>
-  </div>
+      
+      <div class="content-navbar pt-4">
+        <a href="<%= pets_path %>">
+          <i class="fa-solid fa-grip"></i>
+          <p><%= link_to "Browse", pets_path%></p>
+        </a>
+      </div>
 
-  <div class="content-navbar pt-4">
-    <a href="<%= root_path %>">
-      <i class="fa-regular fa-user"></i>
-      <p><%= link_to "Profile", root_path%></p>
-    </a>
-  </div>
-
+      <div class="content-navbar pt-4">
+        <a href="<%= root_path %>">
+          <i class="fa-regular fa-user"></i>
+          <p><%= link_to "Profile", root_path%></p>
+        </a>
+      </div>
+    </div>
 </div>
+
+<!-- Button trigger --
+        <button type="button" class="create" data-action="click->navbar-popup#displayPopup">
+          <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
+        </button>>   
+      
+    <!-- popup -- 
+    <div class="d-none" data-navbar-popup-target="darkBackground">
+    </div>
+    <div class='d-none' data-navbar-popup-target="popup">
+      <%#= render "shared/navbar-popup" %>
+    </div>> 
