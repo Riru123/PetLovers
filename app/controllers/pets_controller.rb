@@ -16,6 +16,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @chatroom = Chatroom.new
   end
 
   def new
