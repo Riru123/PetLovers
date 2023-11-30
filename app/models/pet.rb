@@ -2,7 +2,7 @@ class Pet < ApplicationRecord
   has_one_attached :photo
   include PgSearch::Model
   belongs_to :user
-  validates :name, :species, :colors, :street, :city, :country, :zip_code, presence: true
+  validates :species, :colors, :street, :city, :country, :zip_code, presence: true
   # validates =false
 
   scope :lost_pet, -> { where(category: "I lost") }

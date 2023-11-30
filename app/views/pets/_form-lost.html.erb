@@ -1,7 +1,7 @@
 <div class="container-white-background">
   <div class="form-container">
     <%= simple_form_for(thing, html: { data: { controller: "photo-preview" } }) do |f| %>
-      
+
       <div class="photo">
         <h2>Input details of your pet</h2>
         <label class="upload-photo-btn">
@@ -17,17 +17,17 @@
         <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species" %>
         <%= f.input :breed, label: "Breed" %>
       </div>
-      
+
       <%= f.input :colors %>
       <%= f.input :details %>
-      <%= f.input :category, input_html: { value: 'lost', class:'d-none'}, label: false%>
+      <%= f.input :category, input_html: { value: 'I lost', class:'d-none'}, label: false%>
 
       <h3>Where did you find?
           <span class="material-symbols-outlined">
           pin_drop
-          </span> 
+          </span>
       </h3>
-      
+
       <%= f.input :street %>
       <%= f.input :zip_code %>
       <%= f.input :city %>
