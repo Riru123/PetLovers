@@ -1,16 +1,16 @@
 <div class="container-white-background">
   <div class="form-container">
     <%= simple_form_for(thing, html: { data: { controller: "photo-preview" } }) do |f| %>
+      
       <div class="photo">
         <h2>Input details of animal</h2>
-        <%= image_tag "Group 427322680.png", width: 100, class: "hidden", data: { photo_preview_target: "preview" } %>
         <label class="upload-photo-btn">
           <%= f.file_field :photo, class: 'd-none', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" } %>
-            + Upload Photo
+            <%= image_tag "Group 427322731.png", width: 100, class: "hidden", data: { photo_preview_target: "preview" } %>
         </label>
       </div>
 
-      <div class="form-group flex-container">
+      <div class="form-group">
         <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species" %>
         <%= f.input :breed, label: "Breed" %>
       </div>
