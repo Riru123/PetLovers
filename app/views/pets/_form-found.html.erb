@@ -1,30 +1,38 @@
 <div class="container-white-background">
   <div class="form-container">
     <%= simple_form_for(thing, html: { data: { controller: "photo-preview" } }) do |f| %>
-      <%#= f.input :name, label: "Pet name" %>
-      <%#= f.input :photo, as: :file, :label => "Photo" %>
-      <%= image_tag "", width: 300, class: "hidden", data: { photo_preview_target: "preview" } %>
-      <%= f.input :photo, as: :file, input_html: { class: 'btn primary d-none', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" } }, label_html: { class: 'upload-photo' }, label: '📷 Upload a photo' %>
-      <%= f.input :species, collection: ['Cat', 'Dog'] %>
-      <%= f.input :breed %>
+      <div class="photo">
+        <h2>Input details of animal</h2>
+        <%= image_tag "Group 427322680.png", width: 100, class: "hidden", data: { photo_preview_target: "preview" } %>
+        <label class="upload-photo-btn">
+          <%= f.file_field :photo, class: 'd-none', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" } %>
+            + Upload Photo
+        </label>
+      </div>
+
+      <div class="form-group flex-container">
+        <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species" %>
+        <%= f.input :breed, label: "Breed" %>
+      </div>
+      
       <%= f.input :colors %>
       <%= f.input :details %>
+      <%= f.input :category, input_html: { value: 'I found', class:'d-none'}, label: false%>
 
-      <h2>Where did you find?
-        <button>
-          <p>Current location<i class="fa-solid fa-location-dot"></i></p>
-        </button>
-      </h2>
-
+      <h3>Where did you find?
+        <div class="auto-complete">
+          <span class="material-symbols-outlined">
+          pin_drop
+          </span>
+        </div> 
+      </h3>
+      
       <%= f.input :street %>
       <%= f.input :zip_code %>
       <%= f.input :city %>
       <%= f.input :country, as: :string %>
-
-      <%= f.submit class: 'button btn btn-primary' %>
+      <%= f.submit class: 'btn btn-primary' %>
+      <%= link_to "Cancel", root_path, {:class=>"btn btn-default"} %>
     <% end %>
   </div>
 </div>
-<%#= f.input :location, input_html: { data: {address_autocomplete_target: "address"}, class: "d-none" },
-      wrapper_html: { data: { controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } },
-      autocomplete: "on"%>

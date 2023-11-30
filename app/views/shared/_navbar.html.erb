@@ -13,16 +13,11 @@
       <p><%= link_to "Location", root_path%></p>
     </a>
   </div>
-
-
-
+  
   <!-- Button trigger modal -->
   <button type="button" class="create" data-bs-toggle="modal" data-bs-target="#exampleModal">
     <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
   </button>
-
-
-
 
   <!-- Modal popup -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -31,28 +26,16 @@
         <div class="modal-header">
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-footer">
-          <div><button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= link_to "Report Found", new_pet_path(category: 'found'), class: "" %></button></div>
-          <div><%= link_to "Report lost", new_pet_path(category: 'lost'), class: "btn btn-primary" %></div>
+        <div class="modal-body">
+          <div><%= link_to "Report Found", new_pet_path(category: 'I found'), class: "btn btn-primary", style: "color: white;" %></div>
+          <div><%= link_to "Report Lost", new_pet_path(category: 'lost'), class: "btn btn-secondary", style: "color: white;" %></div>
         </div>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
   
-
   <div class="content-navbar pt-4">
-    <a href="<%= root_path %>">
+    <a href="<%= pets_path %>">
       <i class="fa-solid fa-grip"></i>
       <p><%= link_to "Browse", pets_path%></p>
     </a>
