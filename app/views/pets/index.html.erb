@@ -1,33 +1,15 @@
-<div class="container-white-background button-toggle-container">
+<div class="container-white-background button-toggle-container" data-controller="toggle-index">
 
   <div>
-    <input type="checkbox" name="index-toggle" id="index-toggle" class="input-index">
+    <input type="checkbox" name="index-toggle" id="index-toggle" class="input-index" data-toggle-index-target="checkbox" data-action="click->toggle-index#showLost">
     <label for="index-toggle" class="label-index"></label>
   </div>
-
-    <div class="button-toggle">
-      <%= link_to "Missing", pets_path(category: "I lost"), class: "missing-toggle" %>
-      <%= link_to "Found", pets_path(category: "I found"), class: "found-toggle" %>
-    </div>
 
     <div class="index-title">
       <h3>All lost pet around you</h3>
       <i class="fa-solid fa-filter"></i>
     </div>
 
-    <div class="main-cards-index">
-      <%= render "pets/cards-index" %>
+    <div class="main-cards-index" data-toggle-index-target="indexCard" >
     </div>
 </div>
-
-
-<script>
-const toggleIndex = document.getElementById('index-toggle');
-const showMissing = () => {
-  '<%= link_to "Missing", pets_path(category: "I lost") %>'
-};
-
-toggleIndex.addEventListener('click', (e) => {
-    showMissing()
-});
-</script>
