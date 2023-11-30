@@ -1,8 +1,8 @@
 <div class="container-white-background button-toggle-container">
 
   <div>
-    <input type="checkbox" name="index-toggle" id="index-toggle">
-    <label for="index-toggle"></label>
+    <input type="checkbox" name="index-toggle" id="index-toggle" class="input-index">
+    <label for="index-toggle" class="label-index"></label>
   </div>
 
     <div class="button-toggle">
@@ -23,8 +23,11 @@
 
 <script>
 const toggleIndex = document.getElementById('index-toggle');
+const showMissing = () => {
+  '<%= link_to "Missing", pets_path(category: "I lost") %>'
+};
 
 toggleIndex.addEventListener('click', (e) => {
-    console.log("Checkbox is checked..");
+    showMissing()
 });
 </script>

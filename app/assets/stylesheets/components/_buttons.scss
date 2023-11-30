@@ -75,7 +75,7 @@
 }
 
 
-label {
+.label-index {
   position: relative;
   display: block;
   cursor: pointer;
@@ -90,7 +90,7 @@ label {
   transition: 0.3s;
 }
 
-label:after {
+.label-index:after {
   content: "Missing";
   position: absolute;
   top: 4px;
@@ -106,13 +106,13 @@ label:after {
   transition: 0.3s;
 }
 
-input {
+.input-index {
   width: 0;
   height: 0;
   visibility: hidden;
 }
 
-input:checked + label:before {
+.input-index:checked + .label-index:before {
   content: "Missing";
   position: absolute;
   top: 4px;
@@ -120,7 +120,7 @@ input:checked + label:before {
   transition: 0.3s;
 }
 
-label:before{
+.label-index:before{
   content: 'Found';
   position: absolute;
   top: 4px;
@@ -131,7 +131,7 @@ label:before{
   transition: 0.3s;
 }
 
-input:checked + label::after {
+.input-index:checked + .label-index::after {
   content: "Found";
   left: 230px;
   transform: translateX(-100%);
