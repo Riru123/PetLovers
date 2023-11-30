@@ -43,10 +43,12 @@
     </div>
     <div class="change-state">
     <%# current id e missing %>
-      <% if @pet.user == current_user && @pet.missing = true %>
-        <%= link_to "Mark as found", mark_as_found_path, class:"button-pink"%>
-      <% elsif @pet.missing = true && @pet.category = "I lost" %>
+      <% if @pet.user == current_user && @pet.missing == true %>
+        <%= link_to "Mark as found", mark_path(@pet), data: { confirm: 'Are you sure?' }, class:"button-pink"%>
+      <% elsif @pet.missing == true && @pet.category = "I lost" %>
         <p class="button-black">I found this pet!</p>
+      <% else %>
+        <p class="button-black">Nothing wrong with it!</p>
       <% end %>
     </div>
     <h2 class="pet-themes">About <%= @pet.name.capitalize %></h2>

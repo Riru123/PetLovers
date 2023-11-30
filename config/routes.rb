@@ -10,12 +10,10 @@ Rails.application.routes.draw do
   # end
   resources :pets
 
+  get 'pets/:id/mark_as_found', to: 'pets#mark_as_found', as: :mark
   resources :chatrooms, only: [:show, :create] do
     resources :messages, only: :create
   end
-
-  patch 'pets/:id', to: 'pets#mark_as_found'
-
   # Defines the root path route ("/")
   # root "posts#index"
 end

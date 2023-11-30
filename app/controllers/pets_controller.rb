@@ -52,7 +52,7 @@ class PetsController < ApplicationController
   end
 
   def mark_as_found
-    @pet = Ped.find(params[:id])
+    @pet = Pet.find(params[:id])
     @pet.update(missing: false)
     redirect_to pet_path(@pet)
   end
