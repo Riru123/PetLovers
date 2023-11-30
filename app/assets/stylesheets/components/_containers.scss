@@ -13,12 +13,13 @@
 .container-white-background {
   background-color: $white;
   border-radius: 50px 50px 0px 0px;
-  z-index: 0;
   margin: 0px;
   padding: 0px 15px;
 }
 
-
+.show-container {
+  display: flex;
+}
 // Container for home page
 
 .home-container {
@@ -32,6 +33,7 @@
 .header-container {
   margin: 10px;
   display: flex;
+  position: absolute;
   justify-content: space-between;
   .item1 {
     order: 1; /* Place the first item on the right by changing its order */
@@ -41,6 +43,13 @@
   a {
     text-decoration: none;
     color: white;
+    position: relative;
+    left: 18px;
+  }
+
+  .header {
+    position: relative;
+    left: 269px;
   }
 }
 

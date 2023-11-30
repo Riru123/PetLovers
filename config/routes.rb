@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   # end
   resources :pets
 
+  patch 'pets/:id', to: 'pets#mark_as_found'
+
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
