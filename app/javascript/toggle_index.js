@@ -1,5 +1,5 @@
-const toggleIndex = document.querySelector('#index-toggle');
+const toggleIndex = document.getElementById('index-toggle');
 
-toggleIndex.addEventListener('click', () => {
+toggleIndex.addEventListener('click', (e) => {
     console.log("Checkbox is checked..");
 });
