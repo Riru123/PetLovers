@@ -4,7 +4,6 @@ AllCops:
     - 'bin/**/*'
     - 'db/**/*'
     - 'config/**/*'
-    - 'node_modules/**/*'
     - 'script/**/*'
     - 'support/**/*'
     - 'tmp/**/*'
