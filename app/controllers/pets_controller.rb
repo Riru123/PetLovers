@@ -21,6 +21,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @chatroom = Chatroom.new
   end
 
   def new
@@ -53,6 +54,12 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
     redirect_to root_path, status: :see_other
+  end
+
+  def mark_as_found
+    @pet = Pet.find(params[:id])
+    @pet.update(missing: false)
+    redirect_to pet_path(@pet)
   end
 
   private
