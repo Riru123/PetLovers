@@ -26,6 +26,23 @@
   margin-bottom: 3px;
 }
 
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $black;
+  font-size: 16px;
+
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: $pink;
+  font-size: 16px;
+}
+
 .button-toggle {
   display: inline-flex;
   padding: 0px 7px;
@@ -141,5 +158,6 @@
 }
 
 .ms-icon{
-  width: 20px !important;
+  width: 37px !important;
+  height: 37px !important;
 }
