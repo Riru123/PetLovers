@@ -1,7 +1,13 @@
 .main-cards-home-missing {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: column;
   gap: 10px;
+  overflow: scroll;
+
+  -webkit-scrollbar {
+    display: none;
+}
 
   .card-container-home {
     display: flex;
@@ -56,11 +62,16 @@
 
 }
 
+.main-cards-home-missing::-webkit-scrollbar {
+  display: none;
+}
 
 .main-cards-home-found {
   display: grid;
+  grid-auto-flow: column;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  overflow: scroll;
 
   .card-container-home {
     display: flex;
@@ -115,6 +126,9 @@
 
 }
 
+.main-cards-home-found::-webkit-scrollbar {
+  display: none;
+}
 
 .home-title {
   font-size: 22px;
@@ -122,4 +136,13 @@
   color: #031A1C;
   margin-top: 30px;
   padding: 0;
+}
+
+
+.map-home {
+width: 100%;
+  svg {
+    width: 100%;
+
+  }
 }
