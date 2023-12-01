@@ -3,14 +3,14 @@
 
     <div class="content-navbar pt-4">
       <a href="<%= root_path %>">
-        <i class="fa-solid fa-house"></i>
+        <%= render "shared/root-svg" %>
         <p><%= link_to "Home", root_path%></p>
       </a>
     </div>
 
     <div class="content-navbar pt-4">
       <a href="<%= root_path %>">
-        <i class="fa-solid fa-location-dot"></i>
+        <%= render "shared/location-svg" %>
         <p><%= link_to "Location", root_path%></p>
       </a>
     </div>
@@ -36,14 +36,14 @@
 
       <div class="content-navbar pt-4">
         <a href="<%= pets_path %>">
-          <i class="fa-solid fa-grip"></i>
+          <%= render "shared/browse-svg" %>
           <p><%= link_to "Browse", pets_path%></p>
         </a>
       </div>
 
       <div class="content-navbar pt-4">
         <a href="<%= root_path %>">
-          <i class="fa-regular fa-user"></i>
+          <%= render "shared/profile-svg" %>
           <p><%= link_to "Profile", root_path%></p>
         </a>
       </div>
