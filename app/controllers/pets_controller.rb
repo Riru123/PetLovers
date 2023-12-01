@@ -3,15 +3,15 @@ class PetsController < ApplicationController
 
   def index
     if params[:category] == "I lost"
-      @pets = Pet.lost_pet
+      @pets = Pet.lost_pet.order(created_at: :desc)
     elsif params[:category] == "I found"
-      @pets = Pet.found_pet
+      @pets = Pet.found_pet.order(created_at: :desc)
     else
-      @pets = Pet.all
+      @pets = Pet.all.order(created_at: :desc)
     end
 
-    @pets_lost = Pet.where(category: "I lost")
-    @pets_found = Pet.where(category: "I found")
+    @pets_lost = Pet.where(category: "I lost").order(created_at: :desc)
+    @pets_found = Pet.where(category: "I found").order(created_at: :desc)
 
     respond_to do |format|
       format.html
