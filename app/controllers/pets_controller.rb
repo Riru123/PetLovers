@@ -26,6 +26,8 @@ class PetsController < ApplicationController
     # if chatrooms.each do |chatroom|
     #   chatroom.users.each { |user| user = current_user }
     # end
+    puts "cheking current user"
+    puts current_user
     @chatroom = Chatroom.new
     @existing_chat = current_user.return_common_chat(@pet)
   end
