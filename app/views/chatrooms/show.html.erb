@@ -2,7 +2,7 @@
   data-controller="chatroom-subscription" 
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
   <div class="chatroom">
-    <%= @chatroom.name %>
+    <h2 class="chat-name"><%= @chatroom.name %></h2>
 
 
     <div class="messages" data-chatroom-subscription-target="messages">
@@ -24,7 +24,7 @@
       placeholder: "Message ##{@chatroom.name}",
       wrapper_html: {class: "flex-grow-1"}
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3 text-white" %>
+    <%= f.submit "Send", class: "button-message mb-3" %>
   <% end %>
 
 </div>
