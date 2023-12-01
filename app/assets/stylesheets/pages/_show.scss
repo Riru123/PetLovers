@@ -1,6 +1,16 @@
 .pet-image {
+  position: relative;
   width: 100%;
   height: 200px; /* height of container */
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.74) 15%, rgba(0,0,0,0) 100%);
 }
 
 .pet-details {
@@ -12,9 +22,10 @@
 }
 
 .additional-features {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-bottom: 20px;
 
   svg:nth-child(n+2) {
     margin-right: 5px;
@@ -22,33 +33,75 @@
 }
 
 .left-icon {
-  margin-right: auto;
+  // margin-right: auto;
   display: flex;
+  gap: 5px;
+
+  p {
+    font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+    margin: 0;
+  }
 
   svg {
     color: $darkgray;
   }
 }
 
+.right-icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+
+  .btn {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .chatroom_name {
+    margin: 0px!important;
+    padding: 0px;
+  }
+
+}
+
+.change-state{
+  margin-bottom: 23px;
+}
+
 .about-pet {
   display: flex;
+  gap: 5px;
+  margin-bottom: 23px;
 }
 
 .color-breed-pet {
-  background-color: $gray;
-  margin: 3px 3px 3px 0;
-  padding-top: 4px;
-  padding-left: 10px;
-  padding-right: 110px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  background-color: $lightgray;
   border-radius: 10px;
+  padding: 11px 14px;
+
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
 
   h3 {
+    margin: 0;
+    padding: 0;
     color: $black;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 
 .activity {
-  background-color: $gray;
+  background-color: $lightgray;
   border-radius: 10px;
   color: $darkgray;
   padding-top: 4px;

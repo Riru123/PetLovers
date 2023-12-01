@@ -15,6 +15,8 @@
   border-radius: 50px 50px 0px 0px;
   margin: 0px;
   padding: 0px 15px;
+  position: relative;
+  top: 80px;
 }
 
 .show-container {
@@ -35,6 +37,7 @@
   display: flex;
   position: absolute;
   justify-content: space-between;
+  z-index: 1;
   .item1 {
     order: 1; /* Place the first item on the right by changing its order */
 }
@@ -44,15 +47,23 @@
     text-decoration: none;
     color: white;
     position: relative;
-    left: 18px;
+    top: 37px;
+    left: 3px;
   }
 
   .header {
     position: relative;
-    left: 269px;
+    left: 300px;
+    top: 37px;
   }
 }
 
 .form-container {
   margin: 10% 10%;
+}
+
+* {
+  a {
+    text-decoration: none;
+  }
 }

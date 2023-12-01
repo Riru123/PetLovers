@@ -1,26 +1,24 @@
 <% @pets.each do |pet| %>
-
+  <a href="<%= pet_path(pet) %>">
   <div class="card-border-bottom">
     <div class="card-container-index" style="background-image: url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill %>')">
-      <div class="card-container-index-overlay">
-
+      <div class="" data-toggle-index-target="overlay">
         <% if pet.name.present? %>
           <p><%= pet.name.capitalize %></p>
         <% else %>
           <p>Found <%= pet.species.downcase %></p>
         <% end %>
-
         <small><span><%= pet.city.capitalize %></span> <span>14 km away</span></small>
       </div>
     </div>
+</a>
     <div class="card-index-details">
       <p><%= pet.created_at.strftime('%a %e %b')%></p>
       <span><%= pet.details.capitalize%></span>
       <div class="card-contact-info">
-        <i class="fa-solid fa-phone"></i>
-        <i class="fa-regular fa-message"></i>
+        <%= render "shared/phone-svg" %>
+        <%= render "shared/message-svg" %>
       </div>
     </div>
   </div>
-
 <% end %>

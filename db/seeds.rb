@@ -1,37 +1,37 @@
 puts "cleaning database..."
 Pet.destroy_all
 User.destroy_all
-user_1 = User.create!(email: "test@test.com", password: "123456", username: "rita_", phone: "+31 6 1234 5678")
-user_2 = User.create!(email: "test@test1.com", password: "123456", username: "nivea", phone: "+31 6 2345 6789")
-user_3 = User.create!(email: "test2@test.com", password: "123456", username: "robert", phone: "+31 6 3456 7890")
-user_4 = User.create!(email: "test3@test.com", password: "123456", username: "riru", phone: "+31 6 4567 8901")
+user_1 = User.create!(email: "test@test.com", password: "123456", username: "Rita_", phone: "+31 6 1234 5678")
+user_2 = User.create!(email: "test@test1.com", password: "123456", username: "Nivea", phone: "+31 6 2345 6789")
+user_3 = User.create!(email: "test2@test.com", password: "123456", username: "Robert", phone: "+31 6 3456 7890")
+user_4 = User.create!(email: "test3@test.com", password: "123456", username: "Riru", phone: "+31 6 4567 8901")
 
 puts "Creating pets..."
 
 require "open-uri"
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701181556/PetLovers/Whiskers.jpg")
-pet = Pet.new(name: 'whiskers', category: 'I found', species: 'cat', breed: 'ragdoll', colors: 'white', details: 'a pet has gone missing.', missing: 'true', street:'keizersgracht 1', city: 'amsterdam', country: 'netherlands', zip_code: '1015 aa', user: user_1)
+pet = Pet.new(category: 'I found', species: 'cat', breed: 'ragdoll', colors: 'white', details: 'a pet has gone missing.', missing: 'true', street:'keizersgracht 1', city: 'amsterdam', country: 'netherlands', zip_code: '1015 aa', user: user_1)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save!
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182807/PetLovers/Ruby.jpg")
-pet = Pet.new(name: 'ruby', category: 'I found', species: 'dog', breed: 'labrador retriever', colors: 'black', details: 'help us bring a pet home; missing since a certain date from a specific location.', missing: 'true', street:'melkmarkt 1', city: 'amsterdam', country: 'netherlands', zip_code: '1011 pb', user: user_1)
+pet = Pet.new(category: 'I found', species: 'dog', breed: 'labrador retriever', colors: 'black', details: 'help us bring a pet home; missing since a certain date from a specific location.', missing: 'true', street:'melkmarkt 1', city: 'amsterdam', country: 'netherlands', zip_code: '1011 pb', user: user_1)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182786/PetLovers/Teddy.jpg")
-pet = Pet.new(name: 'teddy', category: 'I found', species: 'dog', breed: 'german shepherd', colors: ' solid black', details: 'urgent: a pet is missing - please contact us if you have any information.', missing: 'true', street:'zuideinde 12', city: 'haarlem', country: 'netherlands', zip_code: '1541 ca', user: user_1)
+pet = Pet.new(category: 'I found', species: 'dog', breed: 'german shepherd', colors: ' solid black', details: 'urgent: a pet is missing - please contact us if you have any information.', missing: 'true', street:'zuideinde 12', city: 'haarlem', country: 'netherlands', zip_code: '1541 ca', user: user_1)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182763/PetLovers/Bailey.jpg")
-pet = Pet.new(name: 'bailey', category: 'I found', species: 'dog', breed: 'dachshund', colors: 'chocolate and tan', details: 'missing since a specific date: a pet last seen near a particular location.', missing: 'true', street:'gedempte oude gracht 67', city: 'broek in waterland', country: 'netherlands', zip_code: '2011 gm', user: user_1)
+pet = Pet.new(category: 'I found', species: 'dog', breed: 'dachshund', colors: 'chocolate and tan', details: 'missing since a specific date: a pet last seen near a particular location.', missing: 'true', street:'gedempte oude gracht 67', city: 'broek in waterland', country: 'netherlands', zip_code: '2011 gm', user: user_1)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182127/PetLovers/Muffin.jpg")
-pet = Pet.new(name: 'muffin', category: 'I found', species: 'cat', breed: 'persian', colors: 'white', details: 'a pet has been missing since a specific date.', missing: 'true', street:'oudezijds voorburgwal 197', city: 'amsterdam', country: 'netherlands', zip_code: '1012 ex', user: user_2)
+pet = Pet.new(category: 'I found', species: 'cat', breed: 'persian', colors: 'white', details: 'a pet has been missing since a specific date.', missing: 'true', street:'oudezijds voorburgwal 197', city: 'amsterdam', country: 'netherlands', zip_code: '1012 ex', user: user_2)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
@@ -41,7 +41,7 @@ pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182161/PetLovers/Nala.jpg")
-pet = Pet.new(name: 'nala', category: 'I found', species: 'cat', breed: 'persian', colors: 'cream', details: 'found: a pet with a distinctive feature, in a specific location.', missing: 'true', street:'nieuwezijds voorburgwal 56', city: 'amsterdam', country: 'netherlands', zip_code: '1012 sc', user: user_2)
+pet = Pet.new(category: 'I found', species: 'cat', breed: 'persian', colors: 'cream', details: 'found: a pet with a distinctive feature, in a specific location.', missing: 'true', street:'nieuwezijds voorburgwal 56', city: 'amsterdam', country: 'netherlands', zip_code: '1012 sc', user: user_2)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
@@ -51,7 +51,7 @@ pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182432/PetLovers/Lucy.jpg")
-pet = Pet.new(name: 'lucy', category: 'I found', species: 'dog', breed: 'german shepherd', colors: 'sable', details: 'our pet with a distinctive feature is missing - please share!', missing: 'true', street:'kruisstraat 4', city: 'haarlem', country: 'netherlands', zip_code: '2011 px', user: user_3)
+pet = Pet.new(category: 'I found', species: 'dog', breed: 'german shepherd', colors: 'sable', details: 'our pet with a distinctive feature is missing - please share!', missing: 'true', street:'kruisstraat 4', city: 'haarlem', country: 'netherlands', zip_code: '2011 px', user: user_3)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
@@ -61,7 +61,7 @@ pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182572/PetLovers/Sadie.jpg")
-pet = Pet.new(name: 'sadie', category: 'I found', species: 'dog', breed: 'french bulldog', colors: 'brindle', details: 'help us reunite with our furry family member, a pet.', missing: 'true', street:'lijnbaansgracht 234', city: 'wormerveer', country: 'netherlands', zip_code: '1017 ph', user: user_1)
+pet = Pet.new(category: 'I found', species: 'dog', breed: 'french bulldog', colors: 'brindle', details: 'help us reunite with our furry family member, a pet.', missing: 'true', street:'lijnbaansgracht 234', city: 'wormerveer', country: 'netherlands', zip_code: '1017 ph', user: user_1)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
@@ -81,7 +81,7 @@ pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182227/PetLovers/Cleo.jpg")
-pet = Pet.new(name: 'cleo', category: 'I found', species: 'cat', breed: 'maine coon', colors: 'silver', details: 'missing since a specific date: a pet last seen in a particular location.', missing: 'true', street:'kalverstraat 92', city: 'amsterdam', country: 'netherlands', zip_code: '1012 ph', user: user_3)
+pet = Pet.new(category: 'I found', species: 'cat', breed: 'maine coon', colors: 'silver', details: 'missing since a specific date: a pet last seen in a particular location.', missing: 'true', street:'kalverstraat 92', city: 'amsterdam', country: 'netherlands', zip_code: '1012 ph', user: user_3)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
