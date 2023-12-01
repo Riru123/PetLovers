@@ -20,9 +20,12 @@
           <%= render "shared/share-svg" %>
         </div>
         <div>
-          <%# If the chatroom is there icon is a link %>
+          
+          <%# Chat Icon and Logic %>
           <% if current_user.has_chat_with?(@pet) %>
-          <%= link_to "chat", chatroom_path(@existing_chat) %>
+          <%= link_to chatroom_path(@existing_chat) do %>
+              <%= render "shared/message-svg" %>
+          <% end %>
 
           <% else %>
             <%= simple_form_for @chatroom, class: "bg-dark" do |f| %>
