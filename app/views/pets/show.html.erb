@@ -20,12 +20,22 @@
           <%= render "shared/share-svg" %>
         </div>
         <div>
-          <%= simple_form_for @chatroom, class: "bg-dark" do |f| %>
-            <%= f.input :name, as: :hidden, input_html: { value: @pet.user.username } %>
-            <%= f.button :button, class: "ms-icon" do %>
-            <%= render "shared/message-svg" %>
+          <%# If the chatroom is there icon is a link %>
+          <% if current_user.has_chat_with?(@pet) %>
+          <%= link_to "chat", chatroom_path(@existing_chat) %>
+
+          <% else %>
+            <%= simple_form_for @chatroom, class: "bg-dark" do |f| %>
+              <%= f.input :name, as: :hidden, input_html: { value: @pet.user.username } %>
+              <%= f.input :pet_id, as: :hidden, input_html: { value: @pet.id } %>
+              <%= f.button :button, class: "ms-icon" do %>
+              <%= render "shared/message-svg" %>
+              <% end %>
             <% end %>
+
           <% end %>
+
+
         </div>
         <div>
           <% if @pet.species == "Cat" || "cat" %>
