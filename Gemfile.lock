@@ -238,6 +238,10 @@ GEM
     rake (13.1.0)
     rdoc (6.6.0)
       psych (>= 4.0.0)
+    redis (5.0.8)
+      redis-client (>= 0.17.0)
+    redis-client (0.18.0)
+      connection_pool
     regexp_parser (2.8.2)
     reline (0.4.0)
       io-console (~> 0.5)
@@ -320,6 +324,7 @@ DEPENDENCIES
   pg_search
   puma (>= 5.0)
   rails (~> 7.1.2)
+  redis (>= 4.0.1)
   sassc-rails
   selenium-webdriver
   simple_form!
