@@ -1,8 +1,8 @@
 .navbar-pet {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   padding: 5px;
-  padding-right: 22px;
   border-style: solid;
   border-width: thin;
   border-top-color: $lightgray;
