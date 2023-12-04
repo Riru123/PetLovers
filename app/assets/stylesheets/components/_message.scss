@@ -6,7 +6,7 @@
 
 // To style the message itself
 .sender-style, .receiver-style {
-  width: 70%;
+  width: 90%;
   max-width: 400px;
   border-radius: 4px;
   padding: 8px;
@@ -14,9 +14,15 @@
 }
 
 .sender-style {
-  background-color: lightcoral;
+  background-color: rgba(173, 216, 230, 0.735);
+  color: $black;
+  border-radius: 10px;
+  font-size: 18px;
 }
 
 .receiver-style {
-  background-color: lightblue;
+  background-color: $lightgray;
+  color: $black;
+  border-radius: 10px;
+  font-size: 18px;
 }
