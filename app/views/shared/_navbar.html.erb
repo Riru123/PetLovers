@@ -1,18 +1,19 @@
 <div data-controller="navbar-popup">
 
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
   <div class="navbar-pet fixed-bottom">
     <div class="content-navbar pt-4">
       <a href="<%= root_path %>">
         <%= render "shared/root-svg" %>
-        <p><%= link_to "Home", root_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Home", root_path%></p>
       </a>
     </div>
 
     <!--Map Button trigger-->
-    <div class="content-navbar pt-4">
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
       <a href="<%= map_path %>">
         <%= render "shared/location-svg" %>
-        <p><%= link_to "Location", map_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= map_path %>"><%= link_to "Location", map_path%></p>
       </a>
     </div>
 
@@ -31,23 +32,24 @@
             <div><%= link_to "I found a pet", new_pet_path(category: 'I found'), class: "btn btn-primary", style: "color: white;" %></div>
             <div><%= link_to "I lost a pet", new_pet_path(category: 'I lost'), class: "btn btn-secondary", style: "color: white;" %></div>
           </div>
+
           <div class="modal-footer">
           </div>
         </div>
       </div>
     </div>
 
-    <div class="content-navbar pt-4">
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
       <a href="<%= pets_path %>">
         <%= render "shared/browse-svg" %>
-        <p><%= link_to "Browse", pets_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= pets_path %>"><%= link_to "Browse", pets_path%></p>
       </a>
     </div>
     
-    <div class="content-navbar pt-4">
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
       <a href="<%= root_path %>">
         <%= render "shared/profile-svg" %>
-        <p><%= link_to "Profile", root_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Profile", root_path%></p>
       </a>
     </div>
 
@@ -66,5 +68,4 @@
         <% end %>
       </ul>
     </div>
-  
 </div>
