@@ -136,6 +136,7 @@ GEM
     ffi (1.16.3)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     http-accept (1.7.0)
@@ -162,6 +163,8 @@ GEM
       net-imap
       net-pop
       net-smtp
+    mapbox-sdk (2.3.3)
+      rest-client (~> 2.1.0)
     marcel (1.0.2)
     matrix (0.4.2)
     mime-types (3.5.1)
@@ -318,8 +321,10 @@ DEPENDENCIES
   dotenv-rails
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
+  geocoder
   importmap-rails
   jbuilder
+  mapbox-sdk
   pg (~> 1.1)
   pg_search
   puma (>= 5.0)

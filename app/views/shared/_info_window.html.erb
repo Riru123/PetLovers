@@ -1,0 +1,12 @@
+<div class="map-popup">
+    <div class="marker-image">
+        <%= cl_image_tag pet.photo.key, height: 70, width: 70, crop: :fill %>
+    </div>
+    <% if pet.name.present? %>
+    <p><%= pet.name.capitalize %></p>
+    <% else %>
+    <p><%= pet.colors %> <%= pet.species.downcase %></p>
+    <% end %>
+    <%= pet.zip_code.upcase %>
+    <%= link_to "See more", pet_path(pet) %>
+</div>
