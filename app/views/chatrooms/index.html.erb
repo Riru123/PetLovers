@@ -1,0 +1,15 @@
+  <div class="home-container">
+    <div class="container-white-background">
+      <div class="chatrooms-index">
+        <% @chatrooms.each do |chatroom| %>
+        <a href="<%= chatroom_path(chatroom) %>">
+          <div class="chatroom-card">
+            <% pet_id = chatroom.pet_id %>
+            <%= chatroom.name %>
+            <%= chatroom.pet.name %>
+          </div>
+        </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
