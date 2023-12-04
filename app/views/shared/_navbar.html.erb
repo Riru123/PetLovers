@@ -1,63 +1,52 @@
 <div data-controller="navbar-popup">
   <div class="navbar-pet fixed-bottom" data-navbar-popup-target="navbar">
 
-    <div class="content-navbar pt-4">
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
       <a href="<%= root_path %>">
         <%= render "shared/root-svg" %>
-        <p><%= link_to "Home", root_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Home", root_path%></p>
       </a>
     </div>
 
-    <div class="content-navbar pt-4">
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
       <a href="<%= root_path %>">
         <%= render "shared/location-svg" %>
-        <p><%= link_to "Location", root_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Location", root_path%></p>
       </a>
     </div>
 
   <!-- Button trigger modal -->
-  <button type="button" class="create" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
-  </button>
-  <!-- Modal popup -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div><%= link_to "I found a pet", new_pet_path(category: 'I found'), class: "btn btn-primary", style: "color: white;" %></div>
-          <div><%= link_to "I lost a pet", new_pet_path(category: 'I lost'), class: "btn btn-secondary", style: "color: white;" %></div>
+    <button type="button" class="create" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
+    </button>
+    <!-- Modal popup -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div><%= link_to "I found a pet", new_pet_path(category: 'I found'), class: "btn btn-primary", style: "color: white;" %></div>
+            <div><%= link_to "I lost a pet", new_pet_path(category: 'I lost'), class: "btn btn-secondary", style: "color: white;" %></div>
+          </div>
         </div>
       </div>
     </div>
+
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
+      <a href="<%= pets_path %>">
+        <%= render "shared/browse-svg" %>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= pets_path %>"><%= link_to "Browse", pets_path%></p>
+      </a>
+    </div>
+
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
+      <a href="<%= root_path %>">
+        <%= render "shared/profile-svg" %>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Profile", root_path%></p>
+      </a>
+    </div>
+
   </div>
-
-      <div class="content-navbar pt-4">
-        <a href="<%= pets_path %>">
-          <%= render "shared/browse-svg" %>
-          <p><%= link_to "Browse", pets_path%></p>
-        </a>
-      </div>
-
-      <div class="content-navbar pt-4">
-        <a href="<%= root_path %>">
-          <%= render "shared/profile-svg" %>
-          <p><%= link_to "Profile", root_path%></p>
-        </a>
-      </div>
-    </div>
 </div>
-
-<!-- Button trigger --
-        <button type="button" class="create" data-action="click->navbar-popup#displayPopup">
-          <i class="fa-solid fa-plus fa-2x" style="color: #FFFFFF;"></i>
-        </button>>
-
-    <!-- popup --
-    <div class="d-none" data-navbar-popup-target="darkBackground">
-    </div>
-    <div class='d-none' data-navbar-popup-target="popup">
-      <%#= render "shared/navbar-popup" %>
-    </div>>
