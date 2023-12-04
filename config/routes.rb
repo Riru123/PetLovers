@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # resources :pets do
   # end
   resources :pets
-
+  get '/map', to: 'pages#map'
   get 'pets/:id/mark_as_found', to: 'pets#mark_as_found', as: :mark
 
   resources :chatrooms, only: [:show, :create] do

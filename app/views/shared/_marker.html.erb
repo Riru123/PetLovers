@@ -1,0 +1,9 @@
+<% if pet.category == "I lost" && pet.species.downcase == 'cat' %>
+  <%= render "shared/cat-lost-svg" %>
+<% elsif pet.category == "I lost" && pet.species.downcase == 'dog' %>
+  <%= render "shared/cat-svg" %>
+<% elsif pet.category == "I found" && pet.species.downcase == 'cat' %>
+  <%= render "shared/cat-svg" %>
+<% elsif pet.category == "I found" && pet.species.downcase == 'dog' %>
+  <%= render "shared/dog-found-svg" %>
+<% end %>
