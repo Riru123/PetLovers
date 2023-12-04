@@ -9,3 +9,64 @@
 .material-symbols-outlined p {
     height:20px;
 }
+
+
+.devise-input {
+  color: $black;
+
+  .form-control {
+    height: 50px;
+    border-radius: 10px;
+    border-color: $lightgray;
+    font-size: 14px;
+    color: $lightgray;
+
+  }
+  .remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+}
+
+.devise-sign-up {
+  color: $black;
+  font-size: 12px;
+
+  a {
+    color: $black;
+  }
+}
+
+.devise-action {
+  display: flex;
+  justify-content: center;
+  height: 54px;
+  align-content: center;
+  background-color: $pink;
+  border-radius: 11px;
+  color: white;
+
+  input {
+    color: white;
+    font-size: 16px;
+  }
+}
+
+.form-bottom {
+  display: flex;
+  position: absolute;
+  bottom: -215px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-bottom-sign-up {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
