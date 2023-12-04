@@ -8,8 +8,7 @@
     <% end %>
   </div>
   <div class='header'>
-    <%= link_to "messages", chatrooms_path %>
-    <%= render "shared/message-bubble" %>
     <%= render "shared/bell" %>
+    <%= link_to render("shared/message-bubble"), chatrooms_path %>
   </div>
 </div>

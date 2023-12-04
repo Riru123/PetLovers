@@ -5,9 +5,10 @@
 <div class = "container-white-background">
   <div class="pet-details">
     <% if @pet.name.present?%>
+      <%= @pet.user.username %>
       <h2 class="pet-themes"><%= @pet.name.capitalize %></h2>
     <% else %>
-      <h2>Pet</h2>
+      <h2 class="pet-themes"><%= "Reporter username:" %> <%= @pet.user.username %></h2>
     <% end %>
 
     <div class="additional-features">
