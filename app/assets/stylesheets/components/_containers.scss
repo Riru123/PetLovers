@@ -19,6 +19,15 @@
   top: 80px;
 }
 
+.mappage-background {
+  background-color: $white;
+  border-radius: 50px 50px 0px 0px;
+  margin: 0px;
+  padding: 0px 15px 100px 15px;
+  position: relative;
+  top: 80px;
+}
+
 .show-container {
   display: flex;
 }
@@ -30,6 +39,15 @@
   padding: 0px;
 }
 
+//container for home-map
+.home-map-container {
+  margin-top: 20px;
+}
+
+//container for map
+.map-container {
+  height:800px;
+}
 // Container for header partial
 
 .header-container {

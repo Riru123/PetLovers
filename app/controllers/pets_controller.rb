@@ -1,3 +1,5 @@
+
+
 class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -9,6 +11,7 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all.order(created_at: :desc)
     end
+    
 
     @pets_lost = Pet.where(category: "I lost").order(created_at: :desc)
     @pets_found = Pet.where(category: "I found").order(created_at: :desc)
