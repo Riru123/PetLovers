@@ -24,13 +24,8 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-
-    # chatrooms = Chatroom.where(pet: @pet)
-    # if chatrooms.each do |chatroom|
-    #   chatroom.users.each { |user| user = current_user }
-    # end
     @chatroom = Chatroom.new
-    @existing_chat = current_user.return_common_chat(@pet)
+    @existing_chat = current_user.return_common_chat(@pet) if current_user
   end
 
   def new

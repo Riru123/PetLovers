@@ -5,9 +5,7 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    # @pet = Pet.find(params[:id])
     @chatroom = Chatroom.create(chatroom_params)
-    # @chatroom.pet = @pet
     redirect_to chatroom_path(@chatroom)
   end
 
