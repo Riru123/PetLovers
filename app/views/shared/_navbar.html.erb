@@ -45,11 +45,11 @@
         <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= pets_path %>"><%= link_to "Browse", pets_path%></p>
       </a>
     </div>
-    
+
     <div class="content-navbar pt-4" data-controller="page-name-navbar">
-      <a href="<%= root_path %>">
+      <a href="<%= profile_path %>">
         <%= render "shared/profile-svg" %>
-        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Profile", root_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= profile_path %>"><%= link_to "Profile", profile_path%></p>
       </a>
     </div>
 
