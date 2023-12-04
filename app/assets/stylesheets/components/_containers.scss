@@ -56,7 +56,13 @@
   display: flex;
   position: absolute;
   justify-content: space-between;
+  align-items: center;
   z-index: 1;
+
+  .navigation-header {
+    display: flex;
+    gap: 10px;
+  }
 
 
   .item1 {

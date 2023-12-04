@@ -1,11 +1,14 @@
 <div class="header-container">
     <%# The link_to is going to be dinamic? Depending on where the person is? %>
-  <% unless current_page?(root_path) %>
-    <p><%= link_to "←", 'javascript:history.back()' %></p>
-  <% end %>
-  <%= link_to "Home", root_path %>
+  <div class="navigation-header">
+    <% unless current_page?(root_path) %>
+      <%= link_to(render("shared/arrow-back-svg"), 'javascript:history.back()') %>
+    <% else %>
+      <%= render "shared/logo" %>
+    <% end %>
+  </div>
   <div class='header'>
-    <i class="fa-solid fa-bell"></i>
-    <i class="fa-solid fa-message"></i>
+    <%= render "shared/message-bubble" %>
+    <%= render "shared/bell" %>
   </div>
 </div>

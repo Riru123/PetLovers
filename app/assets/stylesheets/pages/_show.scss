@@ -2,6 +2,12 @@
   position: relative;
   width: 100%;
   height: 200px; /* height of container */
+
+  img {
+    width: 100%;
+    height: 45vh;
+    object-fit: cover;
+  }
 }
 
 .gradient-overlay {
@@ -69,6 +75,11 @@
 
 .change-state{
   margin-bottom: 23px;
+}
+
+#success-message {
+  color: rgb(86, 166, 86);
+  text-align: center;
 }
 
 .about-pet {

@@ -1,5 +1,5 @@
 <% @pets_found.each do |pet| %>
-    <a href="<%= pets_path %>">
+  <a href="<%= pet_path(pet) %>">
   <div class="card-container-home" style="background-image: url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill %>')">
     <div class="card-container-home-overlay">
       <% if pet.name.present? %>
@@ -11,4 +11,5 @@
       <small><span><%= pet.city.capitalize %></span> <span>14 km away</span></small>
     </div>
   </div>
+  </a>
 <% end %>
