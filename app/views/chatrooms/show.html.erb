@@ -6,13 +6,13 @@
 
 
   <div class="messages" data-chatroom-subscription-target="messages">
-  <% @chatroom.messages.each do |message| %>
-    <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
       <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
         <%= render "messages/message", message: message %>
       </div>
     </div>
-  <% end %>
+    <% end %>
   </div>
   </div>
 
