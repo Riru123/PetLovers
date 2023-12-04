@@ -22,10 +22,11 @@ class PagesController < ApplicationController
             info_window_html: render_to_string(partial: "shared/info_window", locals: {pet: pet}),
             marker_html: render_to_string(partial: "shared/marker", locals: {pet: pet})
           }
-        end 
-      end 
+        end
+      end
     end
   end
+
+  def profile
+  end
 end
-
-
