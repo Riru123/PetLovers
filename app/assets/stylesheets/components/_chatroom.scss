@@ -35,3 +35,16 @@
 
 #new_message {
 gap: 10px}
+
+.chatrooms-index {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  .chatroom-card {
+background: $pink;
+padding: 20px;
+color: $black;
+
+  }
+}
