@@ -12,6 +12,7 @@ class PetsController < ApplicationController
 
     @pets_lost = Pet.where(category: "I lost").order(created_at: :desc)
     @pets_found = Pet.where(category: "I found").order(created_at: :desc)
+    @chatroom = Chatroom.new
 
     respond_to do |format|
       format.html
@@ -22,13 +23,8 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
-
-    # chatrooms = Chatroom.where(pet: @pet)
-    # if chatrooms.each do |chatroom|
-    #   chatroom.users.each { |user| user = current_user }
-    # end
     @chatroom = Chatroom.new
-    @existing_chat = current_user.return_common_chat(@pet)
+    @existing_chat = current_user.return_common_chat(@pet) if current_user
 
     @markers = []
     location = Mapbox::Geocoder.geocode_forward(@pet.city)
