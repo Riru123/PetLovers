@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = current_user.chatrooms
+    @chatrooms = Chatroom.all
     @pets = Pet.all
   end
 

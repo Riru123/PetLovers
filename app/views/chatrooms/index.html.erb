@@ -2,13 +2,21 @@
     <div class="container-white-background">
       <div class="chatrooms-index">
         <% @chatrooms.each do |chatroom| %>
+        <% if chatroom.pet.user_id == current_user.id %>
+          <% if !chatroom.messages.empty? %>
+          <div class="chatroom-card">
+            <%= chatroom.name %>
+            <%= chatroom.pet.name %>
+          </div>
+          <% end %>
+        <% elsif current_user.chatrooms.include?(chatroom)%>
         <a href="<%= chatroom_path(chatroom) %>">
           <div class="chatroom-card">
-            <% pet_id = chatroom.pet_id %>
             <%= chatroom.name %>
             <%= chatroom.pet.name %>
           </div>
         </a>
+        <% end %>
         <% end %>
       </div>
     </div>
