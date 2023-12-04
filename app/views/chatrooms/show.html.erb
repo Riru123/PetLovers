@@ -5,15 +5,15 @@
     <h2 class="chat-name"><%= @chatroom.name %></h2>
 
 
-    <div class="messages" data-chatroom-subscription-target="messages">
-      <% @chatroom.messages.each do |message| %>
-
+  <div class="messages" data-chatroom-subscription-target="messages">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
         <%= render "messages/message", message: message %>
-
-      <% end %>
+      </div>
     </div>
-
-
+    <% end %>
+  </div>
   </div>
 
   <%= simple_form_for [@chatroom, @message],
