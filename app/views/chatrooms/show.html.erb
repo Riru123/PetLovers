@@ -1,8 +1,9 @@
 <div class="container-white-background" 
   data-controller="chatroom-subscription" 
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
   <div class="chatroom">
-    <h2 class="chat-name"><%= @chatroom.name %></h2>
+    <h2 class="chat-name"><%= @chatroom.name.capitalize %></h2>
 
 
   <div class="messages" data-chatroom-subscription-target="messages">
