@@ -20,7 +20,7 @@
           <%= render "shared/share-svg" %>
         </div>
         <div>
-          
+
           <%# Chat Icon and Logic %>
           <%# IF USER not Log-in %>
           <% if current_user.nil? %>
@@ -107,6 +107,6 @@
       <p>📍 Last seen: <%= @pet.street.capitalize %>, <%= @pet.zip_code.upcase %> - <%= @pet.city.capitalize %></p>
     </div>
     <h2 class="pet-themes pt-1">Last location of this pet 📍</h2>
-    <%= render "shared/fake-map-show-svg" %>
+    <%= render 'shared/map-show'%>
   </div>
 </div>

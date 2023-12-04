@@ -12,7 +12,16 @@
       </div>
     </div>
 
-  <h2 class='home-title'>Map</h2>
-    <div class="map-home"><%= render "shared/map-svg" %></div>
+  <h2 class='home-title'>Where are they?</h2>
+  <%= render "shared/map-home-pet" %>
+  <div class="meaning-map">
+    <div class="meaning-pet">
+      <%= render "shared/lost-pet-svg"%>
+      <p>Lost pet</p>
+    </div>
+    <div class="meaning-pet">
+      <%= render "shared/found-pet-svg"%>
+      <p>Found pet</p>
+    </div>
   </div>
-</div>
+  </div>

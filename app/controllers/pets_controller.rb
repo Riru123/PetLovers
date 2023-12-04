@@ -1,5 +1,3 @@
-
-
 class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
@@ -11,7 +9,6 @@ class PetsController < ApplicationController
     else
       @pets = Pet.all.order(created_at: :desc)
     end
-    
 
     @pets_lost = Pet.where(category: "I lost").order(created_at: :desc)
     @pets_found = Pet.where(category: "I found").order(created_at: :desc)
@@ -28,6 +25,20 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @chatroom = Chatroom.new
     @existing_chat = current_user.return_common_chat(@pet) if current_user
+
+    @markers = []
+    location = Mapbox::Geocoder.geocode_forward(@pet.city)
+    if location[0]["features"].size > 0
+      coordinates = location[0]["features"][0]["geometry"]["coordinates"]
+      if coordinates
+        @markers << {
+          lat: coordinates[1],
+          lng: coordinates[0],
+          info_window_html: render_to_string(partial: "shared/info_window", locals: { pet: @pet }),
+          marker_html: render_to_string(partial: "shared/marker", locals: { pet: @pet })
+        }
+      end
+    end
   end
 
   def new

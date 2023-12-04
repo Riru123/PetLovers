@@ -19,6 +19,7 @@ export default class extends Controller {
     });
 
     this.#addMarkersToMap();
+    this.#fitMapToMarkers();
   }
 
   #addMarkersToMap() {
@@ -33,7 +34,7 @@ export default class extends Controller {
         .setLngLat([marker.lng, marker.lat])
         .setPopup(popup)
         .addTo(this.map);
-        
+
       customMarker.addEventListener("mouseenter", () => {
         popup.addTo(this.map);
       });
@@ -42,5 +43,11 @@ export default class extends Controller {
         popup.remove();
       });
     });
+  }
+
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.map.fitBounds(bounds, { padding: 50, maxZoom: 17, duration: 0 })
   }
 }
