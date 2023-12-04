@@ -20,7 +20,7 @@
           <%= render "shared/share-svg" %>
         </div>
         <div>
-          
+
           <%# Chat Icon and Logic %>
           <% if current_user.has_chat_with?(@pet) %>
           <%= link_to chatroom_path(@existing_chat) do %>
@@ -98,6 +98,6 @@
       <p>📍 Last seen: <%= @pet.street.capitalize %>, <%= @pet.zip_code.upcase %> - <%= @pet.city.capitalize %></p>
     </div>
     <h2 class="pet-themes pt-1">Last location of this pet 📍</h2>
-    <%= render "shared/fake-map-show-svg" %>
+    <%= render 'shared/map-show'%>
   </div>
 </div>

@@ -81,7 +81,7 @@ pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701182227/PetLovers/Cleo.jpg")
-pet = Pet.new(category: 'I found', species: 'cat', breed: 'maine coon', colors: 'silver', details: 'missing since a specific date: a pet last seen in a particular location.', missing: 'true', street:'kalverstraat 92', city: 'amsterdam', country: 'netherlands', zip_code: '1012 ph', user: user_3)
+pet = Pet.new(category: 'I found', species: 'cat', breed: 'maine coon', colors: 'silver', details: 'missing since a specific date: a pet last seen in a particular location.', missing: 'true', street:'kalverstraat 92', city: 'amsterdam', country: 'netherlands', zip_code: '1012 bz', user: user_3)
 pet.photo.attach(io: file, filename: "pet.png", content_type: "image/png")
 pet.save
 
