@@ -15,11 +15,13 @@ class PetsController < ApplicationController
 
     @pets_lost = Pet.where(category: "I lost").order(created_at: :desc)
     @pets_found = Pet.where(category: "I found").order(created_at: :desc)
+    @chatroom = Chatroom.new
 
     respond_to do |format|
       format.html
       format.text { render partial: "pets/cards-index", locals: { category: "I lost" }, formats: [:html] }
     end
+
   end
 
   def show
