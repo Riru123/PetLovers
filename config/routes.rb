@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   resources :pets
   get '/map', to: 'pages#map'
   get 'pets/:id/mark_as_found', to: 'pets#mark_as_found', as: :mark
+  get '/profile', to: 'pages#profile'
 
-  resources :chatrooms, only: [:show, :create] do
+  resources :chatrooms, only: [:index, :show, :create] do
     resources :messages, only: :create
   end
   # Defines the root path route ("/")

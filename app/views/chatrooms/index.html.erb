@@ -1,0 +1,58 @@
+  <div class="home-container">
+    <div class="container-white-background">
+      <div class="chatrooms-index">
+      <h2 class='home-title'> Messages</h2>
+        <% @chatrooms.each do |chatroom| %>
+
+          <% if chatroom.pet.user_id == current_user.id %>
+            <% if !chatroom.messages.empty? %>
+              <a href="<%= chatroom_path(chatroom) %>">
+                <div class="chatroom-card">
+                  <div class='user-pet'>
+                    <div class='avatar-chat'></div>
+                    <div class="chat-content">
+                      <div>
+                        <%= chatroom.messages.first.user.username %> ·
+                        <%= chatroom.pet.name.capitalize %>
+                      </div>
+                        <div class='chat-last-msg'>
+                        <% if chatroom.messages.last.user.username == current_user.username %>
+                          <%= "You" %>: <%= chatroom.messages.last.content %> · <%= chatroom.messages.last.created_at.strftime('%a %e %b') %>
+                        <% else %>
+                          <%= chatroom.messages.last.content %> · <%= chatroom.messages.last.created_at.strftime('%a %e %b') %>
+                        <% end %>
+                        </div>
+                    </div>
+                  </div>
+                    <%= render "shared/arrow-next-svg" %>
+                </div>
+              </a>
+            <% end %>
+          <% elsif current_user.chatrooms.include?(chatroom)%>
+            <a href="<%= chatroom_path(chatroom) %>">
+              <div class="chatroom-card">
+                <div class='user-pet'>
+                  <div class='avatar-chat'></div>
+                    <div class="chat-content">
+                      <div>
+                        <%= chatroom.name %> ·
+                        <%= chatroom.pet.name.capitalize %>
+                      </div>
+                      <div class='chat-last-msg'>
+                      <% if chatroom.messages.last.user.username == current_user.username %>
+                        <%= "You" %>: <%= chatroom.messages.last.content %> · <%= chatroom.messages.last.created_at.strftime('%a %e %b') %>
+                      <% else %>
+                        <%= chatroom.messages.last.content %> · <%= chatroom.messages.last.created_at.strftime('%a %e %b') %>
+                      <% end %>
+                      </div>
+                    </div>
+                </div>
+                <%= render "shared/arrow-next-svg" %>
+              </div>
+            </a>
+          <% end %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -1,10 +1,10 @@
 puts "cleaning database..."
 Pet.destroy_all
 User.destroy_all
-user_1 = User.create!(email: "test@test.com", password: "123456", username: "Rita_", phone: "+31 6 1234 5678")
-user_2 = User.create!(email: "test@test1.com", password: "123456", username: "Nivea", phone: "+31 6 2345 6789")
-user_3 = User.create!(email: "test2@test.com", password: "123456", username: "Robert", phone: "+31 6 3456 7890")
-user_4 = User.create!(email: "test3@test.com", password: "123456", username: "Riru", phone: "+31 6 4567 8901")
+user_1 = User.create!(email: "rita@gmail.com", password: "123456", username: "Rita", phone: "+31 6 1234 5678")
+user_2 = User.create!(email: "nivea@gmail.com", password: "123456", username: "Nivea", phone: "+31 6 2345 6789")
+user_3 = User.create!(email: "robert@gmail.com", password: "123456", username: "Robert", phone: "+31 6 3456 7890")
+user_4 = User.create!(email: "riru@gmail.com", password: "123456", username: "Riru", phone: "+31 6 4567 8901")
 
 puts "Creating pets..."
 

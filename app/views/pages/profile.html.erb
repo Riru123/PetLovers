@@ -1,0 +1,18 @@
+<div class="container-white-background">
+  <div class="home-container">
+    <div class="devise-container">
+      <div class="profile-container"></div>
+        <% if user_signed_in? %>
+          <div>
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class:'devise-action'%>
+          </div>
+        <% else %>
+        <%= link_to "Login", user_session_path, class:'devise-action' %>
+        <%= link_to "Sign up", new_user_session_path, class:'devise-action' %>
+      <div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

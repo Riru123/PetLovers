@@ -1,13 +1,16 @@
 class ChatroomsController < ApplicationController
+  def index
+    @chatrooms = Chatroom.all
+    @pets = Pet.all
+  end
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
   end
 
   def create
-    # @pet = Pet.find(params[:id])
     @chatroom = Chatroom.create(chatroom_params)
-    # @chatroom.pet = @pet
     redirect_to chatroom_path(@chatroom)
   end
 

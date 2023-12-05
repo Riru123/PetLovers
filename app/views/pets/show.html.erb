@@ -5,9 +5,10 @@
 <div class = "container-white-background">
   <div class="pet-details">
     <% if @pet.name.present?%>
+      <%= @pet.user.username %>
       <h2 class="pet-themes"><%= @pet.name.capitalize %></h2>
     <% else %>
-      <h2>Pet</h2>
+      <h2 class="pet-themes"><%= "Reporter username:" %> <%= @pet.user.username %></h2>
     <% end %>
 
     <div class="additional-features">
@@ -19,32 +20,45 @@
         <div>
           <%= render "shared/share-svg" %>
         </div>
+
+        <% unless @pet.user == current_user %>
         <div>
 
           <%# Chat Icon and Logic %>
-          <% if current_user.has_chat_with?(@pet) %>
-          <%= link_to chatroom_path(@existing_chat) do %>
+          <%# IF USER not Log-in %>
+          <% if current_user.nil? %>
+            <%# Go to Log-in page %>
+            <%= link_to new_user_session_path do %>
               <%= render "shared/message-svg" %>
-          <% end %>
-
-          <% else %>
-            <%= simple_form_for @chatroom, class: "bg-dark" do |f| %>
-              <%= f.input :name, as: :hidden, input_html: { value: @pet.user.username } %>
-              <%= f.input :pet_id, as: :hidden, input_html: { value: @pet.id } %>
-              <%= f.button :button, class: "ms-icon" do %>
-              <%= render "shared/message-svg" %>
-              <% end %>
             <% end %>
+          <%# ELSE %>
+          <% else %>
+            <% if current_user.has_chat_with?(@pet) %>
+              <%= link_to chatroom_path(@existing_chat) do %>
+                  <%= render "shared/message-svg" %>
+              <% end %>
 
+            <% else %>
+              <%= simple_form_for @chatroom do |f| %>
+                <%= f.input :name, as: :hidden, input_html: { value: @pet.user.username } %>
+                <%= f.input :pet_id, as: :hidden, input_html: { value: @pet.id } %>
+                <%= f.button :button, class: "ms-icon" do %>
+                <%= render "shared/message-svg" %>
+                <% end %>
+              <% end %>
+
+            <% end %>
+          <%# END %>
           <% end %>
-
 
         </div>
+        <% end %>
+
         <div>
-          <% if @pet.species == "Cat" || "cat" %>
+          <% if @pet.species == "cat" %>
             <%= render "shared/cat-svg" %>
           <% else %>
-            <%= render "dog/cat-svg" %>
+            <%= render "shared/dog-svg" %>
           <% end %>
         </div>
       </div>
