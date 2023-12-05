@@ -15,6 +15,8 @@ class PagesController < ApplicationController
   end
 
   def profile
+    @pets_lost = current_user.pets
+    @pets_lost = Pet.where(user_id: current_user, category: "I lost")
   end
 
   private
