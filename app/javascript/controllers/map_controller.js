@@ -1,11 +1,13 @@
 //app/javascript/controllers/map_controller.js
 import { Controller } from "@hotwired/stimulus";
 import mapboxgl from "mapbox-gl";
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 export default class extends Controller {
   static values = {
     apiKey: String,
-    markers: Array
+    markers: Array,
+    center: Object,
   };
 
   connect() {
@@ -15,11 +17,28 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/iloverob/clpr4wurd016v01pocsa6dore",
       center: [4.895168, 52.370216],
-      zoom: 14
+      zoom: 10
     });
 
     this.#addMarkersToMap();
     this.#fitMapToMarkers();
+    this.map.addControl(
+      new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          mapboxgl: mapboxgl,
+          placeholder: "Search for places"    
+      }), 'top-left'
+  );
+    // if (this.centerValue) {
+    //   console.log(this.centerValue);
+    //   const bounds = new mapboxgl.LngLatBounds();
+    //   bounds.extend([this.centerValue.lng, this.centerValue.lat]);
+    //   this.map.fitBounds(bounds,{
+    //     padding: 70,
+    //     maxZoom: this.centerValue.zoom,
+    //     duration: 0,
+    //   });
+    // }
   }
 
   #addMarkersToMap() {
@@ -35,12 +54,7 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.map);
 
-      customMarker.addEventListener("mouseenter", () => {
-        popup.addTo(this.map);
-      });
-
-      customMarker.addEventListener("mouseleave", () => {
-        popup.remove();
+      customMarker.addEventListener("dblclick", () => {
       });
     });
   }

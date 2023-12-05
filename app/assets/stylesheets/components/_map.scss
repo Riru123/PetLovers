@@ -1,0 +1,42 @@
+//Search-bar Setting
+#search-bar-container {
+    position: absolute;
+    top:120px;
+    left:40px;
+    z-index:1000;
+    border-radius: 20px;
+}
+
+.suggestions li {
+    border-bottom: solid 1px $lightgray;
+    list-style: none;
+}
+//for mapbox function
+.mapboxgl-ctrl-geocoder--pin-right {
+    display: none;
+}
+
+.suggestions-wrapper {
+    background-color: white;
+}
+
+.suggestions li {
+    border-bottom: solid 1px $lightgray;
+    list-style: none;
+}
+
+// map-popup setting
+.details {
+    text-align: left;
+    color:black;
+    font-weight: bold;
+}
+.marker-image img{
+    border-radius: 5px;
+}
+
+.mapboxgl-popup-content {
+    border-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+}
