@@ -11,7 +11,7 @@
           <% else %>
             <p>Found <%= pet.species.downcase %></p>
           <% end %>
-          <small><span><%= pet.city.capitalize %></span> <span>14 km away</span></small>
+          <small><span><%= pet.city.capitalize %></span></small>
         </div>
       </div>
   </a>
@@ -19,6 +19,7 @@
         <p><%= pet.created_at.strftime('%a %e %b')%></p>
         <span><%= pet.details.capitalize%></span>
         <div class="card-contact-info">
+          <%= pet.user.phone %>
           <%= render "shared/phone-svg" %>
 
           <%# Chat Icon and Logic %>
