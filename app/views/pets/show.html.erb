@@ -70,8 +70,8 @@
     <div class="change-state">
     <%# current id e missing %>
       <% if @pet.user == current_user && @pet.missing == true %>
-      <div class="button-pink">
-        <%= link_to "Mark as found", mark_path(@pet)%>
+      <div class="button-pink" >
+        <%= link_to "Mark as found", mark_path(@pet), data: {controller:"confetti", action:"click->confetti#spray", animation_value:"basic"} %>
       </div>
       <% elsif @pet.missing == true && @pet.category = "I lost" %>
         <p class="button-black">I found this pet!</p>
