@@ -10,3 +10,5 @@ pin "@popperjs/core", to: "popper.js", preload: true
 pin "@rails/actioncable", to: "https://cdn.jsdelivr.net/npm/@rails/actioncable@7.1.2/app/assets/javascripts/actioncable.esm.js"
 pin "mapbox-gl", to: "https://ga.jspm.io/npm:mapbox-gl@3.0.0/dist/mapbox-gl.js"
 pin "process", to: "https://ga.jspm.io/npm:@jspm/core@2.0.1/nodelibs/browser/process-production.js"
+pin "stimulus-confetti", to: "https://ga.jspm.io/npm:stimulus-confetti@1.0.1/dist/stimulus_confetti.modern.js"
+pin "canvas-confetti", to: "https://ga.jspm.io/npm:canvas-confetti@1.9.2/dist/confetti.module.mjs"
