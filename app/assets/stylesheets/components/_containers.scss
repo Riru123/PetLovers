@@ -34,7 +34,7 @@
 // Container for home page
 
 .home-container {
-  color: $white;
+  // color: $white;
   margin: 0px;
   padding: 0px;
 }
@@ -76,9 +76,6 @@
     color: white;
 
   }
-
-  .header {
-  }
 }
 
 
@@ -114,4 +111,22 @@
 
 .layer-map {
   padding-top: 15px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  padding: 21px 36px;
+  gap: 30px;
+
+  .home-title {
+    padding-bottom: 20px;
+    border-bottom: solid 1px $lightgray;
+  }
+}
+
+.profile-image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
