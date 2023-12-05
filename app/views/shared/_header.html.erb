@@ -8,7 +8,9 @@
     <% end %>
   </div>
   <div class='header'>
-    <%= render "shared/bell" %>
-    <%= link_to render("shared/message-bubble"), chatrooms_path %>
+    <% if user_signed_in? %>
+      <%= render "shared/bell" %>
+      <%= link_to render("shared/message-bubble"), chatrooms_path %>
+    <% end %>
   </div>
 </div>
