@@ -115,3 +115,14 @@
 .layer-map {
   padding-top: 15px;
 }
+
+.profile-container {
+  color: $darkgray;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+
+  h2 {
+    color: $black;
+  }
+}
