@@ -47,9 +47,9 @@
     </div>
 
     <div class="content-navbar pt-4" data-controller="page-name-navbar">
-      <a href="<%= profile_path %>">
+      <a href="<%= root_path %>">
         <%= render "shared/profile-svg" %>
-        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= profile_path %>"><%= link_to "Profile", profile_path%></p>
+        <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Profile", root_path%></p>
       </a>
     </div>
 

@@ -39,12 +39,44 @@ gap: 10px}
 .chatrooms-index {
   display: flex;
   flex-direction: column;
+  padding: 21px 36px;
   gap: 30px;
 
-  .chatroom-card {
-background: $pink;
-padding: 20px;
-color: $black;
+  h2 {
+    border-bottom: solid 1px $lightgray;
+  }
 
+  .home-title {
+    padding-bottom: 20px;
+  }
+
+  .chatroom-card {
+    color: $darkgray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .chat-content {
+      color: $black;
+      font-weight: bold;
+    }
+
+    .chat-last-msg {
+      color: $darkgray;
+      font-weight: lighter;
+    }
+  }
+
+  .user-pet {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .avatar-chat {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background: $lightgray;
   }
 }
