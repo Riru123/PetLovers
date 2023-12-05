@@ -1,7 +1,11 @@
+<div class="home-container">
 <div class="container-white-background">
-    <div class="devise-container">
       <div class="profile-container">
-        <h2>Profile</h2>
+        <h2 class="home-title">Profile</h2>
+        <img src="/app/assets/images/user-profile-image.png" alt="User profile">
+        <%# Display the username of user %>
+        <%# <%= @pet.user.username %>
+        <p> Username </p>
         <% if user_signed_in? %>
           <div>
             <i class="fa-solid fa-right-from-bracket"></i>
