@@ -2,15 +2,16 @@
 <div class="container-white-background">
       <div class="profile-container">
         <h2 class="home-title">Profile</h2>
-        <img src="/app/assets/images/user-profile-image.png" alt="User profile">
-        <%# Display the username of user %>
-        <%# <%= @pet.user.username %>
-        <p> Username </p>
+        <%= render "shared/user-profile-image" %>
+        <%= current_user.username %> 
+        <h2 class="home-title"> My Pets </h2>
         <% if user_signed_in? %>
-          <div>
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class:'devise-action'%>
+        <a data-turbo-method="delete" class="" href="/users/sign_out">
+          <div class="btn-sign-out">
+            <%= render "shared/signout-svg" %>
+            <p>Sign out</p>
           </div>
+        </a>
         <% else %>
         <%= link_to "Login", user_session_path, class:'devise-action' %>
         <%= link_to "Sign up", new_user_session_path, class:'devise-action' %>
