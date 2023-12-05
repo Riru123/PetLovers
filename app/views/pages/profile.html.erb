@@ -1,10 +1,14 @@
 <div class="home-container">
 <div class="container-white-background">
       <div class="profile-container">
+
         <h2 class="home-title">Profile</h2>
-        <%= render "shared/user-profile-image" %>
-        <%= current_user.username %> 
-        <h2 class="home-title"> My Pets </h2>
+        <div class="profile-image">
+          <%= render "shared/user-profile-image" %>
+          <%= current_user.username %> 
+        </div>
+            <h2 class="home-title"> My Pets </h2>
+
         <% if user_signed_in? %>
         <a data-turbo-method="delete" class="" href="/users/sign_out">
           <div class="btn-sign-out">
@@ -12,10 +16,6 @@
             <p>Sign out</p>
           </div>
         </a>
-        <% else %>
-        <%= link_to "Login", user_session_path, class:'devise-action' %>
-        <%= link_to "Sign up", new_user_session_path, class:'devise-action' %>
-      <div>
       <% end %>
       </div>
       </div>

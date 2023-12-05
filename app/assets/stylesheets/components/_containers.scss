@@ -76,9 +76,6 @@
     color: white;
 
   }
-
-  .header {
-  }
 }
 
 
@@ -122,15 +119,14 @@
   padding: 21px 36px;
   gap: 30px;
 
-  h2 {
-    border-bottom: solid 1px $lightgray;
-  }
-
   .home-title {
     padding-bottom: 20px;
+    border-bottom: solid 1px $lightgray;
   }
+}
 
-  .p {
-    color: $gray;
-  }
+.profile-image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

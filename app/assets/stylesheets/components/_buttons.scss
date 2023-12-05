@@ -189,9 +189,17 @@
 // Btn sign out
 
 .btn-sign-out {
-  background-color: $gray;
+  background-color: $lightgray;
   border-radius: 10px;
   display: flex;
-  width: 335px;
   height: 54px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: $black !important;
+  gap: 10px;
+  // .p {
+  //   margin: 0 !important;
+  // }
 }

@@ -14,6 +14,9 @@ class PagesController < ApplicationController
     @map_data = get_map_data
   end
 
+  def profile
+  end
+
   private
 
   def get_map_data
@@ -32,9 +35,6 @@ class PagesController < ApplicationController
         end
       end
     end
-  end
-
-  def profile
   end
 
 end
