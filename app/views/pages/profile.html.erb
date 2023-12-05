@@ -7,20 +7,14 @@
           <%= render "shared/user-profile-image" %>
           <%= current_user.username %> 
         </div>
-            <h2 class="home-title"> My lost Pets </h2>
+            <h2 class="home-title"> My lost pets </h2>
             <div class="main-cards-home-missing">
-            <% @pets_lost.each do |pet| %>
-              <% if pet.missing? === true %>
-                <a href="<%= pet_path(pet) %>">
-                <div class="card-container-home" style="background-image: url('<%= cl_image_path pet.photo.key, height: 300, crop: :fill %>')">
-                  <div class="card-container-home-overlay">
-                    <p><%= pet.name.capitalize %></p>
-                    <small><span><%= pet.city.capitalize %></span> <span>14 km away</span></small>
-                  </div>
-                </div>
-                </a>
-              <% end %>
-            <% end %>
+              <%= render "pets/cards-home-missing" %>
+            </div>
+
+            <h2 class="home-title"> Pets that I found </h2>
+             <div class="main-cards-home-found">
+              <%= render "pets/cards-home-found" %>
             </div>
 
         <% if user_signed_in? %>
