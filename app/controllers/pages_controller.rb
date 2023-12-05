@@ -12,6 +12,16 @@ class PagesController < ApplicationController
 
   def map
     @map_data = get_map_data
+    # if params[:query].present? 
+    #   placenames = Mapbox::Geocoder.geocode_forward(params[:query])
+    #   @center = {
+    #     lat: placenames[0]["features"][0]["center"][1],
+    #     lng: placenames[0]["features"][0]["center"][0],
+    #     zoom: 14
+    #   }
+    # else
+    #   @center = { lat: 4.895168, lng: 52.370216, zoom: 9}
+    # end
   end
 
   def profile

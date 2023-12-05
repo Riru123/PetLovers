@@ -1,7 +1,15 @@
 <div class="layer-map">
+  <%# search bar %>
+  <%# <div id="search-bar-container"> %>
+    <%#= form_tag map_path, method: :get do  %>
+     <%#= text_field_tag :query, params[:query], placeholder:"Search Adress" %>
+    <%# end %>
+  <%# </div> %>
+  <%# MAP %>
   <div class="map-container map-page"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
+      data-map-center-value="<%= @center.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
