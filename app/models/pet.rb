@@ -3,7 +3,7 @@ class Pet < ApplicationRecord
   include PgSearch::Model
   belongs_to :user
   has_many :chatrooms
-  validates :species, :colors, :street, :city, :country, :zip_code, presence: true
+  validates :species, :colors, :street, :city, :country, :zip_code, :photo, presence: true
   # validates =false
 
   scope :lost_pet, -> { where(category: "I lost") }

@@ -8,17 +8,16 @@
     margin-bottom: 22px;
 
     .card-index-details{
-      color: #8D8D8D;
       p {
-        font-size: small;
         margin: 0;
         padding: 0;
+        color: #8D8D8D;
       }
 
       span {
-        font-size: 14px;
         margin: 0;
         padding: 0;
+        color:$black;
       }
     }
   }
@@ -50,7 +49,6 @@
     padding: 0 0.8em;
 
     p {
-      font-size: 12px;
       font-weight: bold;
       padding: 0;
       margin: 0;
@@ -59,7 +57,6 @@
     small {
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
       font-weight: normal;
       padding: 0;
       margin: 0;
@@ -87,7 +84,6 @@
     padding: 0 0.8em;
 
     p {
-      font-size: 12px;
       font-weight: bold;
       padding: 0;
       margin: 0;
@@ -96,7 +92,6 @@
     small {
       display: flex;
       justify-content: space-between;
-      font-size: 10px;
       font-weight: normal;
       padding: 0;
       margin: 0;
@@ -119,9 +114,12 @@
 .card-contact-info {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 6px;
   color: black;
   padding-bottom: 16px;
+  padding-top: 10px;
+  padding-right: 5px;
 
   .chatroom_name {
     margin: 0 !important;
@@ -144,7 +142,7 @@
   align-items: center;
   font-size: 22px;
   font-weight: bold;
-  color: #031A1C;
+  color: $black;
   margin-top: .8em;
   padding: 0;
 }

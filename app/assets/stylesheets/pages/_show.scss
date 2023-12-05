@@ -31,7 +31,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
 
   svg:nth-child(n+2) {
     margin-right: 5px;
@@ -131,5 +131,35 @@
   align-items: center;
   svg {
     margin-right: 6px;
+  }
+}
+
+
+.share-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+
+  button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 0px 10px 10px 0px;
+    border: solid 1px $blue;
+    background: $blue;
+    transition: background 0.3s;
+
+
+    &:active {
+      background: $lightblue;
+    }
+
+  }
+
+  .share-content {
+    border: solid 1px $blue;
+    padding: 5px 10px;
+    border-radius: 10px 0 0 10px;
   }
 }
