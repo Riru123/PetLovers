@@ -2,7 +2,7 @@
   <div class="gradient-overlay"></div>
   <%= cl_image_tag @pet.photo.key %>
 </div>
-<div class = "container-white-background">
+<div class = "container-white-background" data-controller="share" data-share-url-value="<%= pet_url(@pet) %>">
   <div class="pet-details">
     <% if @pet.name.present?%>
       <%= @pet.user.username %>
@@ -18,7 +18,8 @@
       </div>
       <div class="right-icon">
         <div>
-          <%= render "shared/share-svg" %>
+          <input type="checkbox" name="share" id="share" class="input-index" data-share-target="checkbox" data-action="click->share#share">
+          <label for="share"><%= render "shared/share-svg" %></label>
         </div>
 
         <% unless @pet.user == current_user %>
@@ -65,6 +66,10 @@
     </div>
 
 
+    <div class="share-input">
+      <div class="share-content" data-share-target="clipboard"></div>
+      <button data-action="click->share#copyClip" data-share-target="button">Copy Clip</button>
+    </div>
 
 
     <div class="change-state">
