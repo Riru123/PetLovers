@@ -120,8 +120,10 @@
 .profile-container {
   display: flex;
   flex-direction: column;
-  padding: 21px 36px;
-  gap: 30px;
+  color: $black;
+  font-size: 20px;
+  padding: 10px 10px;
+b
 
   .home-title {
     padding-bottom: 20px;

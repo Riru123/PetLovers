@@ -195,11 +195,14 @@
   height: 54px;
   justify-content: center;
   align-items: center;
-  margin: 0 !important;
+  margin-top: 20px;
+  margin-bottom: 20px;
   padding: 0 !important;
-  color: $text !important;
+  color: #8B8B8F !important;
   gap: 10px;
-  // .p {
-  //   margin: 0 !important;
-  // }
+
+  .sign-out-p {
+    padding: 0 !important;
+    margin: 0!important;
+  }
 }
