@@ -11,28 +11,28 @@
       </div>
 
       <div class="form-group">
-        <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species" %>
+        <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species *" %>
         <%= f.input :breed, label: "Breed" %>
       </div>
       
-      <%= f.input :colors %>
+      <%= f.input :colors, label: "Colors *" %>
       <%= f.input :details %>
       <%= f.input :category, input_html: { value: 'I found', class:'d-none'}, label: false%>
 
       <h3>Where did you find?
-        <div class="auto-complete">
           <span class="material-symbols-outlined">
           pin_drop
-          </span>
-        </div> 
+          </span> 
       </h3>
       
-      <%= f.input :street %>
-      <%= f.input :zip_code %>
-      <%= f.input :city %>
-      <%= f.input :country, as: :string %>
-      <%= f.submit class: 'btn btn-primary btn-form-lost' %>
-      <%= link_to "Cancel", root_path, {:class=>"btn btn-default btn-form-lost"} %>
+      <%= f.input :street, label: "Street *"%>
+      <%= f.input :zip_code, label: "Zip-code *" %>
+      <%= f.input :city, label: "City *" %>
+      <%= f.input :country, as: :string, label: "Country *"%>
+      <div class="form-submit">
+        <%= f.submit class: 'btn btn-primary btn-form-lost' %>
+        <%= link_to "Cancel", root_path, {:class=>"btn btn-default btn-form-lost"} %>
+      </div>
     <% end %>
   </div>
 </div>
