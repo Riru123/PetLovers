@@ -5,10 +5,10 @@
 <div class = "container-white-background" data-controller="share" data-share-url-value="<%= pet_url(@pet) %>">
   <div class="pet-details">
     <% if @pet.name.present?%>
-      <%= @pet.user.username %>
+      <%= "Reporter:" %> <%= @pet.user.username %>
       <h2 class="pet-themes"><%= @pet.name.capitalize %></h2>
     <% else %>
-      <h2 class="pet-themes"><%= "Reporter username:" %> <%= @pet.user.username %></h2>
+      <h2 class="pet-themes"><%= "Found by:" %> <%= @pet.user.username %></h2>
     <% end %>
 
     <div class="additional-features">
