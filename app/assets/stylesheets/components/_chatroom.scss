@@ -7,7 +7,7 @@
   flex-grow: 1;
 
 .chat-name {
-  color: $black;
+  color: $text;
   padding:10px;
 }
 
@@ -57,7 +57,7 @@ gap: 10px}
     justify-content: space-between;
 
     .chat-content {
-      color: $black;
+      color: $text;
       font-weight: bold;
     }
 

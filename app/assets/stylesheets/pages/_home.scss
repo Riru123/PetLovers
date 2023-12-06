@@ -40,7 +40,7 @@
     inset: 0;
     z-index: -1;
     // background: #EF6962;
-    background: rgba(3, 26, 28, 0.8);
+    background: $black;
     mix-blend-mode: multiply;
   }
 
@@ -101,7 +101,7 @@
     border-radius: 10px;
     inset: 0;
     z-index: -1;
-    background: #EF6962;
+    background: $pink;
     // background: rgba(3, 26, 28, 0.8);
     mix-blend-mode: multiply;
   }
@@ -130,7 +130,7 @@
 .home-title {
   font-size: 22px;
   font-weight: bold;
-  color: #031A1C;
+  color: $text;
   margin-top: 30px;
   padding: 0;
 }

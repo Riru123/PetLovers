@@ -70,7 +70,7 @@
     inset: 0;
     z-index: -1;
     // background: #EF6962;
-    background: rgba(3, 26, 28, 0.8);
+    background: $black;
     mix-blend-mode: multiply;
   }
 
@@ -104,7 +104,7 @@
     border-radius: 10px;
     inset: 0;
     z-index: -1;
-    background: #CC9C9A;
+    background: $pink;
     // background: rgba(3, 26, 28, 0.8);
     mix-blend-mode: multiply;
   }
@@ -116,7 +116,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 6px;
-  color: black;
+  color: $text;
   padding-bottom: 16px;
   padding-top: 10px;
   padding-right: 5px;
@@ -128,7 +128,7 @@
   .chatroom_pet_id {
     margin: 0 !important;
   }
-  
+
   .btn {
     padding: 0px !important;
   }
@@ -142,7 +142,7 @@
   align-items: center;
   font-size: 22px;
   font-weight: bold;
-  color: $black;
+  color: $text;
   margin-top: .8em;
   padding: 0;
 }
