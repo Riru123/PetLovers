@@ -1,0 +1,11 @@
+# config/meta.yml
+
+meta_product_name: “PetLovers”
+
+meta_title: “PetLovers – Report a missing pet”
+
+meta_description: “Report a missing or found pet”
+
+meta_image: “cover.png” # should exist in `app/assets/images/`
+
+# twitter_account: “@product_twitter_account” # required for Twitter Cards
