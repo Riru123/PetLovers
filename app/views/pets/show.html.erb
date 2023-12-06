@@ -79,7 +79,7 @@
         <%= link_to "Mark as found", mark_path(@pet), data: {controller:"confetti", action:"click->confetti#spray", animation_value:"basic"}, class: "button-pink" %>
       </div>
       <% elsif @pet.missing == true && @pet.category = "I lost" %>
-        <p class="button-black">I found this pet!</p>
+        <p class="button-black d-none">I found this pet!</p>
       <% else %>
         <p id="success-message">🎉 Yeaaah this pet is reunited! 🎉</p>
       <% end %>
@@ -99,9 +99,9 @@
         <div class="color-breed-pet">
           <h3>Breed</h3>
           <% if @pet.breed.present?%>
-            <%= @pet.breed.capitalize%>
+            <p><%= @pet.breed.capitalize%></p>
           <% else %>
-            <%= "Not informed"%>
+            <p>"Not informed"</p>
           <% end %>
         </div>
       </div>
@@ -111,7 +111,6 @@
     <p><%= @pet.details.capitalize %></p>
     <div class="activity my-2">
       <div id="theme-activity">
-        <%= render "shared/activity-svg" %>
         <h2 class="pet-themes pt-1">Recent Activity</h2>
       </div>
       <p>📍 Last seen: <%= @pet.street.capitalize %>, <%= @pet.zip_code.upcase %> - <%= @pet.city.capitalize %></p>
