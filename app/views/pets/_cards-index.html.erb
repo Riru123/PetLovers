@@ -22,33 +22,37 @@
           <%= pet.user.phone %>
           <%= render "shared/phone-svg" %>
 
+
+
           <%# Chat Icon and Logic %>
           <%# IF USER not Log-in %>
-            <% if current_user.nil? %>
-              <%# Go to Log-in page %>
-              <%= link_to new_user_session_path do %>
-                <%= render "shared/message-svg" %>
-              <% end %>
-
-            <%# ELSE %>
-            <% else %>
-              <% if current_user.has_chat_with?(pet) %>
-                <% existing_chat = current_user.return_common_chat(pet) if current_user %>
-                <%= link_to chatroom_path(existing_chat) do %>
+          <% unless pet.user == current_user %>
+            <div>
+              <% if current_user.nil? %>
+                <%# Go to Log-in page %>
+                <%= link_to new_user_session_path do %>
                   <%= render "shared/message-svg" %>
-              <% end %>
-
+                <% end %>
+              <%# ELSE %>
               <% else %>
-                <%= simple_form_for @chatroom, class: "bg-dark" do |f| %>
-                  <%= f.input :name, as: :hidden, input_html: { value: pet.user.username } %>
-                  <%= f.input :pet_id, as: :hidden, input_html: { value: pet.id } %>
-                  <%= f.button :button, class: "ms-icon" do %>
-                  <%= render "shared/message-svg" %>
+                <% if current_user.has_chat_with?(pet) %>
+                  <% existing_chat = current_user.return_common_chat(pet) if current_user %>
+                  <%= link_to chatroom_path(existing_chat) do %>
+                    <%= render "shared/message-svg" %>
+                <% end %>
+                <% else %>
+                  <%= simple_form_for @chatroom, class: "bg-dark" do |f| %>
+                    <%= f.input :name, as: :hidden, input_html: { value: pet.user.username } %>
+                    <%= f.input :pet_id, as: :hidden, input_html: { value: pet.id } %>
+                    <%= f.button :button, class: "ms-icon" do %>
+                    <%= render "shared/message-svg" %>
+                    <% end %>
                   <% end %>
                 <% end %>
+              <%# END %>
               <% end %>
-            <%# END %>
-            <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
