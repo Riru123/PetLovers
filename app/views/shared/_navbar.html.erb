@@ -1,8 +1,8 @@
 <div data-controller="navbar-popup">
 
-    <div class="content-navbar pt-4" data-controller="page-name-navbar">
   <div class="navbar-pet fixed-bottom">
-    <div class="content-navbar pt-4">
+
+    <div class="content-navbar pt-4" data-controller="page-name-navbar">
       <a href="<%= root_path %>">
         <%= render "shared/root-svg" %>
         <p data-action="load->page-name-navbar#load" data-page-name-navbar-target="pageName" data-page="<%= root_path %>"><%= link_to "Home", root_path%></p>
@@ -69,4 +69,4 @@
         <% end %>
       </ul>
     </div>
-</div>
+
