@@ -135,4 +135,9 @@ b
   display: flex;
   align-items: center;
   gap: 10px;
+
+  img {
+    border-radius: 50%;
+    width: 50px;
+  }
 }
