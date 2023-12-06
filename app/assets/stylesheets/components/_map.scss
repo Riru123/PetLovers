@@ -5,6 +5,19 @@
     left:40px;
     z-index:1000;
     border-radius: 20px;
+    border: none;
+   
+}
+.mapboxgl-ctrl-geocoder--input {
+    border: 0.1rem solid $lightgray;
+    border-radius: 10px;
+    padding: 5px;  
+    font-family: "Cabin" !important;
+}
+
+.mapboxgl-ctrl-geocoder--icon {
+ width: 25px;
+ height: 25px;
 }
 
 .suggestions li {
@@ -28,15 +41,24 @@
 // map-popup setting
 .details {
     text-align: left;
-    color:black;
+    color: $text;
     font-weight: bold;
+    font-size: 16px;
+    padding: 5px;
 }
 .marker-image img{
     border-radius: 5px;
+    padding: 5px;
+    border: 0;
+    border: none !important;
 }
 
 .mapboxgl-popup-content {
     border-radius: 15px;
     padding-top: 2px;
     padding-bottom: 4px;
+}
+
+.mapboxgl-popup-close-button {
+    visibility: hidden
 }
