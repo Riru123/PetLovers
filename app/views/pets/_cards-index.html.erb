@@ -15,12 +15,16 @@
         </div>
       </div>
   </a>
-      <div class="card-index-details">
+      <div class="card-index-details" data-controller="phone-number">
         <p><%= pet.created_at.strftime('%a %e %b')%></p>
         <span><%= pet.details.capitalize%></span>
         <div class="card-contact-info">
-          <%= pet.user.phone %>
+          <div class="d-none" data-phone-number-target= "number">
+            <%= pet.user.phone %>
+          </div>
+          <div data-action="click->phone-number#phone">
           <%= render "shared/phone-svg" %>
+          </div>
 
           <%# Chat Icon and Logic %>
           <%# IF USER not Log-in %>
