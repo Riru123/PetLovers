@@ -74,9 +74,11 @@ gap: 10px}
   }
 
   .avatar-chat {
-    height: 44px;
-    width: 44px;
-    border-radius: 50%;
-    background: $lightgray;
+
+    img {
+      height: 44px;
+      width: 44px;
+      border-radius: 50%;
+    }
   }
 }
