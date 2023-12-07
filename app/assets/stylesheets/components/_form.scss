@@ -64,12 +64,16 @@ abbr {
     color: white;
     font-size: 16px;
   }
+
+  .btn {
+    margin: 0;
+  }
 }
 
 .form-bottom {
   display: flex;
-  position: absolute;
-  bottom: -215px;
+  position: relative;
+  bottom: -200px;
   flex-direction: column;
   align-items: center;
   gap: 20px;
