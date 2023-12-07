@@ -6,14 +6,9 @@
           <%= render "shared/user-profile-image" %>
           <%= current_user.username %>
         </div>
-            <h2 class="home-title"> Pets that I lost </h2>
+            <h2 class="home-title"> My reports </h2>
             <div class="main-cards-home-missing">
-              <%= render "pets/cards-home-missing" %>
-            </div>
-
-            <h2 class="home-title"> Pets that I found </h2>
-             <div class="main-cards-home-found">
-              <%= render "pets/cards-home-found" %>
+              <%= render "pets/cards-pets-reports" %>
             </div>
 
         <% if user_signed_in? %>

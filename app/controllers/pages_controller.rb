@@ -25,10 +25,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @pets_lost = current_user.pets
-    @pets_lost = Pet.where(user_id: current_user, category: "I lost")
-    @pets_found = current_user.pets
-    @pets_found = Pet.where(user_id: current_user, category: "I found")
+    @pets_report = Pet.where(user_id: current_user, missing: true).order(created_at: :desc)
   end
 
   private
