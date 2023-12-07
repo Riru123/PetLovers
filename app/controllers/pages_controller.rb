@@ -26,6 +26,7 @@ class PagesController < ApplicationController
 
   def profile
     @pets_report = Pet.where(user_id: current_user, missing: true).order(created_at: :desc)
+    @past_report = Pet.where(user_id: current_user, missing: false).order(created_at: :desc)
   end
 
   private
