@@ -19,11 +19,11 @@
       <%= f.input :details %>
       <%= f.input :category, input_html: { value: 'I found', class:'d-none'}, label: false%>
 
-      <h3>Where did you find?
+      <p class="pt-2"><strong>Where did you find?</strong>
           <span class="material-symbols-outlined">
           pin_drop
           </span> 
-      </h3>
+      </p>
       
       <%= f.input :street, label: "Street *"%>
       <%= f.input :zip_code, label: "Zip-code *" %>

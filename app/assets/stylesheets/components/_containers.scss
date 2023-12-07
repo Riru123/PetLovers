@@ -96,6 +96,15 @@
 
 .form-container {
   margin: 10% 10%;
+  label {
+    color:$text;
+  }
+  h3 {
+    color:$text;
+  }
+  p {
+    color:$text;
+  }
 }
 
 * {
