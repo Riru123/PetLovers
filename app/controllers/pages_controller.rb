@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   def map
     @map_data = get_map_data
-    # if params[:query].present? 
+    # if params[:query].present?
     #   placenames = Mapbox::Geocoder.geocode_forward(params[:query])
     #   @center = {
     #     lat: placenames[0]["features"][0]["center"][1],
@@ -36,7 +36,8 @@ class PagesController < ApplicationController
   def get_map_data
     @pets = Pet.all
     @markers = @pets.map do |pet|
-      location = Mapbox::Geocoder.geocode_forward(pet.city)
+      full_address = "#{pet.street}, #{pet.city}, #{pet.country}, #{pet.zip_code}"
+      location = Mapbox::Geocoder.geocode_forward(full_address)
       if location[0]["features"].size > 0
         coordinates = location[0]["features"][0]["geometry"]["coordinates"]
         if coordinates
