@@ -11,6 +11,11 @@
               <%= render "pets/cards-pets-reports" %>
             </div>
 
+            <h2 class="home-title"> Past reports </h2>
+            <div class="main-cards-home-missing">
+              <%= render "pets/cards-past-reports" %>
+            </div>
+
         <% if user_signed_in? %>
         <a data-turbo-method="delete" class="" href="/users/sign_out">
           <div class="btn-sign-out">
