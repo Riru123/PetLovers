@@ -27,7 +27,8 @@ class PetsController < ApplicationController
     @existing_chat = current_user.return_common_chat(@pet) if current_user
 
     @markers = []
-    location = Mapbox::Geocoder.geocode_forward(@pet.city)
+    full_address = "#{@pet.street}, #{@pet.city}, #{@pet.country}, #{@pet.zip_code}"
+    location = Mapbox::Geocoder.geocode_forward(full_address)
     if location[0]["features"].size > 0
       coordinates = location[0]["features"][0]["geometry"]["coordinates"]
       if coordinates
