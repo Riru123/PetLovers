@@ -26,8 +26,13 @@ export default class extends Controller {
 
   copyClip() {
     const textToCopy = this.data.get('urlValue');
+    const buttonTarget = this.buttonTarget;
+
     navigator.clipboard.writeText(textToCopy).then(() => {
-      console.log('Text copied to clipboard');
+      buttonTarget.textContent = 'Copied!';
+      setTimeout(() => {
+        buttonTarget.textContent = 'Copy';
+      }, 2000); // Reset to 'Copy' after 2 seconds (adjust as needed)
     }).catch((err) => {
       console.error('Unable to copy text to clipboard', err);
     });

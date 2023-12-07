@@ -2,13 +2,16 @@
 <div class="map-popup">
     <div class="details">
         <div class="marker-image">
-            <%= cl_image_tag pet.photo.key, height: 90, width: 120, crop: :fill%>
+            <%= cl_image_tag pet.photo.key, height: 126, width: 168, crop: :fill%>
         </div>
 
         <% if pet.name.present? %>
-        <p><%= pet.name.capitalize %></p>
+          <div class='market-image-info'>
+            <p><%= pet.name.capitalize %></p>
+            <span>Since: <%= pet.created_at.strftime('%a %e %b') %></span>
+          </div>
         <% else %>
-        <p><%= pet.colors.capitalize %> <%= pet.species.downcase %></p>
+         <p><%= pet.colors.capitalize %> <%= pet.species.downcase %></p>
         <% end %>
 
     </div>
