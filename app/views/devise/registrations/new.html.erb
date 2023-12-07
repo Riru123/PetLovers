@@ -5,6 +5,12 @@
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
           <%= f.error_notification %>
           <div class="form-inputs  devise-input">
+              <div class="photo" data-controller="photo-preview">
+                <label class="upload-photo-btn">
+                  <%= f.file_field :photo, class: 'd-none', data: { photo_preview_target: "input", action: "change->photo-preview#displayPreview" } %>
+                  <%= image_tag "Group 427322731.png", width: 100, class: "hidden", data: { photo_preview_target: "preview" } %>
+                </label>
+              </div>
             <%= f.input :username,
                         placeholder: 'Madu',
                         required: true,
