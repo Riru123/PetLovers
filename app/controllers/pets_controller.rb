@@ -22,6 +22,7 @@ class PetsController < ApplicationController
   end
 
   def show
+    
     @pet = Pet.find(params[:id])
     @chatroom = Chatroom.new
     @existing_chat = current_user.return_common_chat(@pet) if current_user
