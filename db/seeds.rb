@@ -16,7 +16,7 @@ user_2.photo.attach(io: file, filename: "user_nivea.jpg", content_type: "image/j
 user_2.save!
 
 file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701863842/PetLovers/user_robert.jpg")
-user_3 = User.new(email: "robert@gmail.com", password: "123456", username: "Robert", phone: "+31 6 3456 7890")
+user_3 = User.new(email: "robert1@gmail.com", password: "123456", username: "RobertC", phone: "+31 6 3456 7890")
 user_3.photo.attach(io: file, filename: "user_robert.jpg", content_type: "image/jpg")
 user_3.save!
 
@@ -29,6 +29,11 @@ file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701872999/P
 user_5 = User.new(email: "jennifer@gmail.com", password: "123456", username: "JennyA", phone: "+31 6 4567 8901")
 user_5.photo.attach(io: file, filename: "user_jennifer.jpg", content_type: "image/jpg")
 user_5.save!
+
+file = URI.open("https://res.cloudinary.com/ds9b30kg0/image/upload/v1701863842/PetLovers/user_robert.jpg")
+user_6 = User.new(email: "robert@gmail.com", password: "123456", username: "Robert", phone: "+31 6 3456 7890")
+user_6.photo.attach(io: file, filename: "user_robert.jpg", content_type: "image/jpg")
+user_6.save!
 
 puts "Creating pets..."
 
