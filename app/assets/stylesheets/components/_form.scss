@@ -1,6 +1,10 @@
 .photo {
-    text-align: center;
-    margin-bottom: 20px 0px 20px;
+  text-align: center;
+  margin-bottom: 20px 0px 20px;
+  padding-bottom: 10px;
+}
+.upload-photo-btn {
+  padding-top: 6px;
 }
 .form-group {
     display: flex;
@@ -9,7 +13,16 @@
 .material-symbols-outlined p {
     height:20px;
 }
+.form-submit {
+  margin-top: 40px;
+}
+abbr {
+  display: none;
+}
 
+.pet_species {
+  margin-right: 4px;
+}
 
 .devise-input {
   color: $text;

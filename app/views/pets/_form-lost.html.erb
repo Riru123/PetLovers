@@ -10,26 +10,28 @@
         </label>
       </div>
 
-      <%= f.input :name, label: "Pet name" %>
+      <%= f.input :name, label: "Pet name *" %>
       <%#= f.input :photo, as: :file, :label => "Photo" %>
 
       <div class="form-group flex-container">
-        <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species" %>
+        <%= f.input :species, collection: ['Cat', 'Dog'], label: "Species *" %>
         <%= f.input :breed, label: "Breed" %>
       </div>
 
-      <%= f.input :colors %>
+      <%= f.input :colors, label: "Colors *" %>
       <%= f.input :details %>
       <%= f.input :category, input_html: { value: 'I lost', class:'d-none'}, label: false%>
 
       <p class="pt-2"><strong>Where's the last place that you saw your pet?</strong></p>
 
-      <%= f.input :street %>
-      <%= f.input :zip_code %>
-      <%= f.input :city %>
-      <%= f.input :country, as: :string %>
-      <%= f.submit class: 'btn btn-primary btn-form-lost' %>
-      <%= link_to "Cancel", root_path, {:class=>"btn btn-default btn-form-lost"} %>
+      <%= f.input :street, label: "Street *"%>
+      <%= f.input :zip_code, label: "Zip-code *" %>
+      <%= f.input :city, label: "City *" %>
+      <%= f.input :country, as: :string, label: "Country *"%>
+      <div class="form-submit">
+        <%= f.submit class: 'btn btn-primary btn-form-lost' %>
+        <%= link_to "Cancel", root_path, {:class=>"btn btn-default btn-form-lost"} %>
+      </div>
     <% end %>
   </div>
 </div>

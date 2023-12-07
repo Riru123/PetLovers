@@ -1,5 +1,5 @@
 <% if  params[:category] == 'I found'%>
 <%= render "form-found", thing: @pet %>
-<% else  %>
+<% else  params[:category] == 'I lost'  %>
 <%= render "form-lost", thing: @pet %>
 <% end %>
